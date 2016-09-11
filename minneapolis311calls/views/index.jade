@@ -3,3 +3,15 @@
 block content
   h1= title
   p Welcome to #{title}
+
+  table
+  thead
+    tr
+      th Name
+      th Food
+  tbody
+    - var items = [{name:'Dean',food:'Chicken'}, {name:'Paul',food:'steak'}]
+    - each item in items
+      tr
+        td= item.name
+        td= item.food
