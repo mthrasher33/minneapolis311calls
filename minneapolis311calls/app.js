@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -25,6 +26,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+////database connection. where is the correct place for this?
+//var connection = mysql.createConnection({
+//    host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
+//    user: 'master',
+//    password: 'fri$nDgramming',
+//    database: 'address_data'
+//});
+
+////create the connection
+//connection.connect();
+
+//connection.query('SELECT * from RentalLicense LIMIT 100', function (err, rows, fields) {
+//    if (!err) {
+//        //  Send data to the debugger
+//        console.log('The solution is: ', rows);
+//    }
+//    else
+//        console.log('Error while performing Query: ' + err);
+//});
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

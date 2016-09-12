@@ -2,7 +2,15 @@
 
 block content
   h1= title
-  p Welcome to #{title}
+  p 100 Rental Properties in Minneapolis
+
+  ul
+    - for (var i = 0, len = results.length; i<len; i ++) {
+      li Address: #{results[i].Address}
+      li Manager: #{results[i].APP_NAME}
+      li _______________________________
+        
+      - }
 
   table
   thead
