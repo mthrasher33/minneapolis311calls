@@ -5,9 +5,9 @@ block content
 
   div.col-lg-6.
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
+      <input id="search-input" type="text" class="form-control" placeholder="Search for...">
       <span class="input-group-btn">
-       <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+       <button id="search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </span>
     </div><!-- /input-group -->
 
@@ -27,6 +27,16 @@ block content
           td #{i+1}
           td #{results[i].Address} 
           td #{results[i].APP_NAME}
+
+
+block script
+    script(type='text/javascript').
+        $(document).ready(function() {
+                $('#search').click(function(){
+                   var search = $('#search-input').val();
+                   window.location.href = '/addressSearch/'+search;
+                });
+            });
 
 //-
   ul
