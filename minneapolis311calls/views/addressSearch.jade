@@ -7,7 +7,8 @@ block content
     div
         p Here is what we found!
     div.col-lg-12
-    p Property Manager: #{results[0].ContactName}
+    p Property Manager: 
+        a#landlordName #{results[0].ContactName}
     p Manager since: #{results[0].IssueDate}
 
     div
@@ -23,3 +24,14 @@ block content
             td #{i+1}
             td #{results[i].TypeName} 
             td #{results[i].OpenedDateTime}
+
+block script
+    script(type='text/javascript').
+        $(document).ready(function() {
+                $('#landlordName').click(function(){
+                   //alert("clicked");
+                   var name = $('#landlordName').text();
+                   //alert(name);
+                   window.location.href = '/landlordSearch/'+name;
+                });
+            });

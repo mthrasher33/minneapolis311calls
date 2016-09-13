@@ -1,0 +1,26 @@
+﻿extends layout
+
+block content
+    h1 Address Search Results
+    div 
+        p You Search for: #{addressID}
+    div
+        p Here is what we found!
+    div.col-lg-12
+    p Property Manager: #{landlordId}
+    p Manager since: #{resultsLl[0].IssueDate}
+
+    div
+    table.table.table-striped
+      thead
+        tr
+          th #
+          th Type
+          th Date of Incident
+      tbody
+        each rrow, i in resultsLl
+          tr
+            td #{i+1}
+            td #{resultsLl[i].Address}
+            td #{resultsLl[i].TypeName} 
+            td #{resultsLl[i].OpenedDateTime}

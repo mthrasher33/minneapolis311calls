@@ -9,6 +9,7 @@ var mysql = require('mysql');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var addressSearch = require('./routes/addressSearch');
+var landlordSearch = require('./routes/landlordSearch');
 
 var app = express();
 
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/addressSearch', addressSearch);
-
+app.use('/landlordSearch', landlordSearch);
 
 ////database connection. where is the correct place for this?
 //var connection = mysql.createConnection({

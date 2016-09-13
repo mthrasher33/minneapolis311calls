@@ -35,6 +35,7 @@
     <Compile Include="public\javascripts\jquery-3.1.0.min.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\addressSearch.js" />
+    <Compile Include="routes\landlordSearch.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
@@ -55,6 +56,7 @@
     <Content Include="views\addressSearch.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\index.jade" />
+    <Content Include="views\landlordSearch.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
   </ItemGroup>
