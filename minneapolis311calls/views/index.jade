@@ -2,8 +2,33 @@
 
 block content
   h1= title
-  p 100 Rental Properties in Minneapolis
 
+  div.col-lg-6.
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+       <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
+    </div><!-- /input-group -->
+
+  div.col-lg-12
+    p 100 Rental Properties in Minneapolis
+
+  div
+  table.table.table-striped
+    thead
+      tr
+        th #
+        th Address
+        th Manager
+    tbody
+      each rrow, i in results
+        tr
+          td #{i+1}
+          td #{results[i].Address} 
+          td #{results[i].APP_NAME}
+
+//-
   ul
     - for (var i = 0, len = results.length; i<len; i ++) {
       li Address: #{results[i].Address}
