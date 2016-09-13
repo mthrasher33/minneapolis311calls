@@ -3,6 +3,23 @@
 block content
     h1 Address Search Results
     div 
-        p You Search for: #{addressId}
+        p You Search for: #{addressID}
     div
         p Here is what we found!
+    div.col-lg-12
+    p Property Manager: #{results[0].ContactName}
+    p Manager since: #{results[0].IssueDate}
+
+    div
+    table.table.table-striped
+      thead
+        tr
+          th #
+          th Type
+          th Date of Incident
+      tbody
+        each rrow, i in results
+          tr
+            td #{i+1}
+            td #{results[i].TypeName} 
+            td #{results[i].OpenedDateTime}
