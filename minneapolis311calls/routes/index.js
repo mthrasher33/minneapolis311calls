@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
 /*GET autocomplte for home page search*/
 router.get('/search', function (req, res) {
     console.log("SEARCHING");
-    connection.query('SELECT Address from RentalLicense where Address like "%' + req.query.key + '%"', function (err, rows, fields) {
+    connection.query('SELECT Address from RentalLicense where Address like "%' + mysql.escape(req.query.key) + '%"', function (err, rows, fields) {
         if (err) throw err;
         var data = [];
         console.log(req.query.key);
