@@ -1,24 +1,16 @@
 ﻿var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var datalayer = require('../data/datalayer.js');
 
 
-//database connection. where is the correct place for this?
-var connection = mysql.createConnection({
-    host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
-    user: 'master',
-    password: 'fri$nDgramming',
-    database: 'address_data'
-});
-
-//create the connection
-connection.connect();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    connection.query('SELECT * from RentalLicense LIMIT 100', function (err, rows, fields) {
+
+    datalayer.getTopRentalLicenses(function (err, rows, fields) {
         if (!err) {
-            res.render('index', { results: rows, title:'Express' });
+            res.render('index', { results: rows, title: 'Express' });
         }
         else
             console.log('Error while performing Query: ' + err);
@@ -28,7 +20,7 @@ router.get('/', function (req, res) {
 /*GET autocomplte for home page search*/
 router.get('/search', function (req, res) {
     console.log("SEARCHING");
-    connection.query('SELECT Address from RentalLicense where Address like "%' + mysql.escape(req.query.key) + '%"', function (err, rows, fields) {
+    datalayer.query('SELECT Address from RentalLicense where Address like "%' + mysql.escape(req.query.key) + '%"', function (err, rows, fields) {
         if (err) throw err;
         var data = [];
         console.log(req.query.key);
@@ -48,7 +40,7 @@ router.post('/check', function (req, res) {
     //TODO
 
     //connect to database and search the input in the address column
-    connection.query('SELECT DISTINCT Address from RentalLicense where Address like "%' + req.body.typeahead + '%"', function (err, rows, fields) {
+    datalayer.query('SELECT DISTINCT Address from RentalLicense where Address like "%' + req.body.typeahead + '%"', function (err, rows, fields) {
         console.log("Querying the database...");
         console.log("number of rows returned:");
         console.log(rows.length);
