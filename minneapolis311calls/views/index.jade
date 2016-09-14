@@ -4,12 +4,14 @@ block content
   h1= title
 
   div.col-lg-6.
-    <div class="input-group">
-      <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search for...">
-      <span class="input-group-btn">
-       <button id="search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-      </span>
-    </div><!-- /input-group -->
+    <form action="/check" method="POST" role="form">
+        <div class="form-group">
+          <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search for...">
+          <span class="input-group-btn">
+           <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </span>
+        </div>
+    </form><!-- /input-group -->
 
   div.col-lg-12
     p 100 Rental Properties in Minneapolis

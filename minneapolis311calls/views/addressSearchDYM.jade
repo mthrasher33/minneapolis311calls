@@ -1,0 +1,10 @@
+﻿extends layout
+
+block content
+    h1 You're close!
+    p Did you mean: 
+      ul 
+    - for (var i = 0, len = results.length; i<len; i ++) {
+        li 
+           a(href="/addressSearch/"+ results[i].Address )  #{results[i].Address}      
+      - }
