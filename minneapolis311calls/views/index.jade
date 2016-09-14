@@ -5,7 +5,7 @@ block content
 
   div.col-lg-6.
     <div class="input-group">
-      <input id="search-input" type="text" class="form-control" placeholder="Search for...">
+      <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search for...">
       <span class="input-group-btn">
        <button id="search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </span>
@@ -35,6 +35,13 @@ block script
                 $('#search').click(function(){
                    var search = $('#search-input').val();
                    window.location.href = '/addressSearch/'+search;
+                });
+                   
+                //autocomplete the search box
+                $('#search-input').typeahead({
+                    name: 'countries',
+                    remote: 'http://localhost:1337/search?key=%QUERY',
+                    limit: 10
                 });
             });
 
