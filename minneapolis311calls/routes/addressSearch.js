@@ -2,15 +2,6 @@
 var router = express.Router();
 var mysql = require('mysql');
 
-
-//database connection. where is the correct place for this?
-var connection = mysql.createConnection({
-    host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
-    user: 'master',
-    password: 'fri$nDgramming',
-    database: 'address_data'
-});
-
 //If the address is not a rental property
 router.get('/', function (req, res) {
     res.render('addressSearch404', { title: 'Address Search | Not Found' });
