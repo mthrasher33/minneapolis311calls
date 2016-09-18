@@ -1,6 +1,6 @@
 ﻿var DataLayer = function () {
     var mysql = require("mysql");
-    var creds = //require("./_config.js"); 
+    var creds = //require("./_config.js");
         {
             host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
             user: 'master',
@@ -8,7 +8,7 @@
             database: 'address_data',
             connectionLimit: 10
         };
-    
+
     var pool = mysql.createPool(creds);
 
 
@@ -18,13 +18,28 @@
             connection.query('SELECT * from RentalLicense LIMIT 100', function (err, rows, fields) {
                 // And done with the connection.
                 connection.release();
-
                 callback(err, rows, fields);
             });
-           
-            
         })
     };
+    // bbox is an array that is east, south, west, north coordinates
+    this.getPointsInArea = function(bbox, callback) {
+        pool.getConnection(function (err, connection) {
+              var q = '\
+              SELECT distinct round(x(geom), 6) as x, round(y(geom), 6) as y, \
+              subjectname from Complaint311 \
+              where st_contains(st_Envelope(geomfromtext(\'LineString(? ?, ? ?)\', 4326)), geom)\
+              limit 100\
+              '
+            // Use the connection
+            connection.query(q, bbox, function (err, rows, fields) {
+                // And done with the connection.
+                connection.release();
+                callback(err, rows, fields);
+            });
+        })
+    };
+
 
 
     this.buildSQL = function (sql, arr) {
