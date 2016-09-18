@@ -39,6 +39,7 @@
     <Compile Include="routes\index.js" />
     <Compile Include="routes\addressSearch.js" />
     <Compile Include="routes\landlordSearch.js" />
+    <Compile Include="routes\tryagain.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />

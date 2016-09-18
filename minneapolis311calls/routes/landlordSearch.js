@@ -1,22 +1,26 @@
 ﻿var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
 var datalayer = require('../data/datalayer.js');
 
-//database connection. where is the correct place for this?
-var connection = mysql.createConnection({
-    host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
-    user: 'master',
-    password: 'fri$nDgramming',
-    database: 'address_data'
+/* GET home page. */
+router.get('/', function (req, res) {
+
+    datalayer.getTopRentalLicenses(function (err, rows, fields) {
+        if (!err) {
+            res.render('index', { results: rows, title: 'Express' });
+        }
+        else
+            console.log('Error while performing Query: ' + err);
+    });
 });
 
 
 //Get Address Search Results, curently just searching by DB id for simplicity
 router.get('/:landlordId', function (req, res) {
-        datalayer.query("Call rental311callsByLandlord(?)", [req.params.landlordId], function (err, rows, fields) {
-        if (!err) {
-            console.log('Starting query')
+        console.log('Starting query')
+
+        datalayer.rental311callsByLandlord(req.params.landlordId, function (err, rows, fields) {
+        if (!err) {            
             res.render('landlordSearch', { landlordId: req.params.landlordId, resultsLl: rows[0], title: 'Landlord Search' });
 
             //  Send data to the debugger

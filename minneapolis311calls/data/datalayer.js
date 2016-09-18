@@ -16,6 +16,19 @@
         pool.getConnection(function (err, connection) {
             // Use the connection
             connection.query('SELECT * from RentalLicense LIMIT 100', function (err, rows, fields) {
+            // And done with the connection.
+                connection.release();
+
+                callback(err, rows, fields);
+            }); 
+        })
+    };
+
+
+    this.rental311callsByLandlord = function (landlordId, callback) {
+        pool.getConnection(function (err, connection) {
+            // Use the connection
+            connection.query("Call rental311callsByLandlord(?)", landlordId, function (err, rows, fields) {
                 // And done with the connection.
                 connection.release();
                 callback(err, rows, fields);
@@ -39,7 +52,6 @@
             });
         })
     };
-
 
 
     this.buildSQL = function (sql, arr) {
