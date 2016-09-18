@@ -2,26 +2,14 @@
 var router = express.Router();
 var datalayer = require('../data/datalayer.js');
 
-/* GET home page. */
-router.get('/', function (req, res) {
-
-    datalayer.getTopRentalLicenses(function (err, rows, fields) {
-        if (!err) {
-            res.render('index', { results: rows, title: 'Express' });
-        }
-        else
-            console.log('Error while performing Query: ' + err);
-    });
-});
-
-
 //Get Address Search Results, curently just searching by DB id for simplicity
-router.get('/:landlordId', function (req, res) {
+router.get('/:landloardName', function (req, res) {
         console.log('Starting query')
 
-        datalayer.rental311callsByLandlord(req.params.landlordId, function (err, rows, fields) {
-        if (!err) {            
-            res.render('landlordSearch', { landlordId: req.params.landlordId, resultsLl: rows[0], title: 'Landlord Search' });
+        datalayer.rental311callsByLandlord(req.params.landloardName, function (err, rows, fields) {
+            if (!err) {     
+                var firstResult = rows[0];
+                res.render('landlordSearch', { landlordId: req.params.landlordName, resultsLl: rows[0], title: 'Landlord Search' });
 
             //  Send data to the debugger
             console.log('The solution is: ', rows);
