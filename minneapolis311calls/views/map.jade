@@ -41,7 +41,7 @@ body
       };
       console.log(bounds_obj)
       var params = $.param(bounds_obj)
-      var url = "http://localhost:3000/map/geojson?" + params
+      var url = "/map/geojson?" + params
       console.log(url)
       $.getJSON(url, function( data ) {
         var geo = L.geoJson(data, {
