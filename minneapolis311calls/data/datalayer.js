@@ -35,6 +35,19 @@
             });
         })
     };
+
+    this.rental311callsByAddress = function (address, callback) {
+        pool.getConnection(function (err, connection) {
+            // Use the connection
+            connection.query("Call rental311callsByAddress(?)", address, function (err, rows, fields) {
+
+                // And done with the connection.
+                connection.release();
+                callback(err, rows, fields);
+            });
+        })
+    };
+
     // bbox is an array that is east, south, west, north coordinates
     this.getPointsInArea = function(bbox, callback) {
         pool.getConnection(function (err, connection) {

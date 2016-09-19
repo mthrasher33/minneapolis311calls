@@ -1,9 +1,9 @@
 ﻿extends layout
 
 block content
-    h1 Address Search Results
+    h1 311 Call Results for Address
     div 
-        p You Search for: #{addressID}
+        p You Searched for: #{address}
        
 
        if (typeof locals.results[0] != 'undefined')
@@ -12,8 +12,8 @@ block content
         div.col-lg-12
         p Property Manager: 
             a#landlordName #{results[0].ContactName}
-        p Manager since: #{results[0].IssueDate}
-
+        p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
+        
         div
         table.table.table-striped
           thead
@@ -26,7 +26,7 @@ block content
               tr
                 td #{i+1}
                 td #{results[i].TypeName} 
-                td #{results[i].OpenedDateTime}
+                td #{moment(results[i].OpenedDateTime).format('dddd, MMMM Do YYYY')}
        else 
          div
          p No 311 calls to this property

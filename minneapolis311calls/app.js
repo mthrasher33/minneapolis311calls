@@ -14,6 +14,10 @@ var map = require('./routes/map');
 
 var app = express();
 
+//this is done so we can use moment in Jade templates
+app.locals.moment = require('moment');
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

@@ -34,11 +34,13 @@
     <Compile Include="data\datalayer.js" />
     <Compile Include="public\javascripts\bootstrap.min.js" />
     <Compile Include="public\javascripts\jquery-3.1.0.min.js" />
+    <Compile Include="public\javascripts\leaflet.js" />
     <Compile Include="public\javascripts\typeahead.js" />
     <Compile Include="public\javascripts\typeahead.min.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\addressSearch.js" />
     <Compile Include="routes\landlordSearch.js" />
+    <Compile Include="routes\map.js" />
     <Compile Include="routes\tryagain.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
@@ -48,6 +50,11 @@
     <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\javascripts\images\layers-2x.png" />
+    <Content Include="public\javascripts\images\layers.png" />
+    <Content Include="public\javascripts\images\marker-icon-2x.png" />
+    <Content Include="public\javascripts\images\marker-icon.png" />
+    <Content Include="public\javascripts\images\marker-shadow.png" />
     <Content Include="public\stylesheets\bootstrap-theme.css" />
     <Content Include="public\stylesheets\bootstrap-theme.min.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
@@ -65,6 +72,7 @@
     <Content Include="views\landlordSearch.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
+    <Content Include="views\map.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -73,6 +81,7 @@
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\fonts\" />
+    <Folder Include="public\javascripts\images\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="typings\" />
@@ -83,8 +92,10 @@
     <Folder Include="typings\globals\debug\" />
     <Folder Include="typings\globals\express-serve-static-core\" />
     <Folder Include="typings\globals\express\" />
+    <Folder Include="typings\globals\geojson\" />
     <Folder Include="typings\globals\jade\" />
     <Folder Include="typings\globals\mime\" />
+    <Folder Include="typings\globals\moment\" />
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\mysql\" />
     <Folder Include="typings\globals\node\" />
@@ -100,8 +111,10 @@
     <TypeScriptCompile Include="typings\globals\debug\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express-serve-static-core\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\geojson\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\moment\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mysql\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
