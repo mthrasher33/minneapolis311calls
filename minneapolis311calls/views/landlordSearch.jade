@@ -1,9 +1,9 @@
 ﻿extends layout
 
 block content
-    h1 Address Search Results
+    h1 311 Call Results for Landlord (all properties they manage)
     div 
-        p You Search for: #{landlordName}
+        p You Searched for: #{landlordName}
     div
         p Here is what we found!
     div.col-lg-12
@@ -14,6 +14,7 @@ block content
       thead
         tr
           th #
+          th Address
           th Type
           th Date of Incident
       tbody
@@ -22,4 +23,5 @@ block content
             td #{i+1}
             td #{resultsLl[i].Address}
             td #{resultsLl[i].TypeName} 
-            td #{resultsLl[i].OpenedDateTime}
+            td #{moment(resultsLl[i].OpenedDateTime).format('dddd, MMMM Do YYYY')}
+           
