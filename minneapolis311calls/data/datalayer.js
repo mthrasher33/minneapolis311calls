@@ -66,7 +66,7 @@
         })
     };
 
-
+    /*  Unclear if we need any of this general stuff.  Let's leave it for a little while, until we know
     this.buildSQL = function (sql, arr) {
         return mysql.format(sql, arr);
     }
@@ -106,6 +106,8 @@
             connection.release();
         } catch (ex) { }
     }
+    */
+
 };
 
 module.exports = new DataLayer();
