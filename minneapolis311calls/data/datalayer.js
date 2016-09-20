@@ -48,6 +48,28 @@
         })
     };
 
+    this.matchPartialAddress = function (partialAddress, callback) {
+        pool.getConnection(function (err, connection) {
+            // Use the connection
+            connection.query("SELECT Address from RentalLicense where Address LIKE CONCAT('%', ?, '%') LIMIT 10; ", partialAddress, function (err, rows, fields) {
+                // And done with the connection.
+                connection.release();
+                callback(err, rows, fields);
+            });
+        })
+    };
+
+    this.matchAddressDistinct = function (address, callback) {
+        pool.getConnection(function (err, connection) {
+            // Use the connection
+            connection.query("SELECT DISTINCT Address from RentalLicense where Address LIKE CONCAT('%', ?, '%') LIMIT 10; ", address, function (err, rows, fields) {
+                // And done with the connection.
+                connection.release();
+                callback(err, rows, fields);
+            });
+        })
+    };
+
     // bbox is an array that is east, south, west, north coordinates
     this.getPointsInArea = function(bbox, callback) {
         pool.getConnection(function (err, connection) {
@@ -66,7 +88,8 @@
         })
     };
 
-    /*  Unclear if we need any of this general stuff.  Let's leave it for a little while, until we know
+    /*
+    //  Unclear if we need any of this general stuff.  Let's leave it for a little while, until we know
     this.buildSQL = function (sql, arr) {
         return mysql.format(sql, arr);
     }
@@ -107,6 +130,7 @@
         } catch (ex) { }
     }
     */
+
 
 };
 

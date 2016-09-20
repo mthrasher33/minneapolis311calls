@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
 /*GET autocomplte for home page search*/
 router.get('/search', function (req, res) {
     console.log("SEARCHING");
-    datalayer.query('SELECT Address from RentalLicense where Address like "%' + mysql.escape(req.query.key) + '%"', function (err, rows, fields) {
+    datalayer.matchPartialAddress(req.query.key, function (err, rows, fields) {
         if (err) throw err;
         var data = [];
         console.log(req.query.key);
@@ -36,11 +36,8 @@ router.post('/check', function (req, res) {
     console.log("POST METHOD:");
     console.log(req.body.typeahead) //returns what the user typed in the box
 
-    //sanitize and validate the input
-    //TODO
-
     //connect to database and search the input in the address column
-    datalayer.query('SELECT DISTINCT Address from RentalLicense where Address like "%' + req.body.typeahead + '%"', function (err, rows, fields) {
+    datalayer.matchAddressDistinct(req.body.typeahead, function (err, rows, fields) {
         console.log("Querying the database...");
         console.log("number of rows returned:");
         console.log(rows.length);
