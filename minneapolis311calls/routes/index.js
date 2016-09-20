@@ -3,8 +3,6 @@ var router = express.Router();
 var mysql = require('mysql');
 var datalayer = require('../data/datalayer.js');
 
-
-
 /* GET home page. */
 router.get('/', function (req, res) {
 
