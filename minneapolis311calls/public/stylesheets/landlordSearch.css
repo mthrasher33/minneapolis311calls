@@ -1,0 +1,7 @@
+td#address {
+	cursor: pointer;
+}
+
+td#address:hover {
+	color: blue;
+}
