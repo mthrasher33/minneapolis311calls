@@ -15,7 +15,7 @@ block content
         p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
         
         div
-        table.table.table-striped
+        table.table.table-striped#results
           thead
             tr
               th #
@@ -40,4 +40,6 @@ block script
                    //alert(name);
                    window.location.href = '/landlordSearch/'+name;
                 });
+
+                $('#results').DataTable();
             });
