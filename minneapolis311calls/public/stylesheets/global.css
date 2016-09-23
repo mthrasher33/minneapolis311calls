@@ -1,7 +1,24 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Leckerli%20One);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 ul {
     list-style: none;
+}
+
+body {
+	/*Overwrite native body padding for jade*/
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+}
+
+.body-content {
+	/*weird stuff to overwrite native padding*/
+/*	margin-left: -50px;
+    margin-right: -50px;
+    margin-top: -9px;*/
 }
 
 
@@ -25,20 +42,65 @@ ul {
 
 /**INDEX PAGE**/
 	.minneapolisLandscape {
-		background-image: url('/public/images/minneapolis.jpg');
+		background-image: url('/images/minneapolis.jpg');
+
+		    height: 1200px;
+    background-size: cover;
 	}
 	.searchBox {
-		width: 100%;
-		background-color: #E8EBE8;
-		border-radius: 10px 10px 10px 10px;
+		width: 90%;
+		height: 300px;
+		color:white;
 		margin: 10px auto;
+    position: absolute;
+    top: 15%;
+    left: 5%;
 	}
+
+	.block {
+		border-radius: 10px 10px 10px 10px;
+		background: #496B46;
+  		filter: alpha(opacity=60);
+  		/* IE */
+        -moz-opacity: 0.6;
+  		/* Mozilla */
+  		opacity: 0.9;
+  		/* CSS3 */
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		height: 100%;
+  		width: 100%;
+	}
+
+	.searchBoxText {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+
+	}
+
 
 
 	/**SEARCH BOX**/
-	.searchBox .title {
+	.searchBoxText .title {
 		font-family:  "Leckerli One";
-		font-size: 25px ;
+		font-size: 40px ;
+		opacity: 1;
+		text-align: center;
+		color:  #B5B8B5;
+	}
+
+	.searchBoxText .subTitle {
+		font-size:15px;
+		text-transform: uppercase;
+		font-family: "Montserrat";
+		opacity: 1;
+		text-align: center;
+		color: #AAEEA4;
 	}
 
 	/**END SEARCH BOX**/
@@ -47,7 +109,19 @@ ul {
 
 /**END INDEX PAGE**/
 
+footer {
+	    background-color: #6A6B6A;
+	    margin-bottom: 0px;
 
+}
+
+footer p {
+	margin-bottom: 0px;
+}
+
+footer ul {
+	margin-bottom: 0px;
+}
 
 .table100 {
 	display: none;
@@ -65,13 +139,23 @@ ul {
 }
 .typeahead, .tt-query, .tt-hint {
 	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 24px;
-	height: 30px;
-	line-height: 30px;
+/*	border-radius: 8px;
+*/	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
 	outline: medium none;
 	padding: 8px 12px;
-	/*width: 396px;*/
+	color:black;
+	width: 100%;
+	font-family: "Montserrat";
+	color: #6A6B6A;
+	vertical-align: middle;
+
+}
+
+
+.twitter-typeahead { /*width of input box*/
+	width: 100%;
 }
 .typeahead {
 	background-color: #FFFFFF;
@@ -106,6 +190,54 @@ ul {
 .tt-suggestion p {
 	margin: 0;
 }
+
+#search {
+    /* margin-left: 30px; */
+/*    line-height: 25px;
+*/
+    /* position: absolute; */
+    /* top: -37px; */
+    /* left: 900px; */
+    /* right: 4%; */
+    /* top: 42%; */
+    border-radius: 0px 0px 0px 0px;
+}
+
+.row.first, .row.second, .row.third {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+.row.second, .row.third {
+	text-align: center;
+}
+
+.row.second {
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+/*Stats on the last row of the search box*/
+.row.third {
+	margin-top: 45px;
+	font-family: "Montserrat";
+	font-size:14px;
+
+}
+
+.row.third .col-xs-4 {
+	border-top: 1px solid white;
+	padding-top:10px;
+	cursor:pointer;
+	height:100%;
+}
+
+.row.third .col-xs-4:hover {
+	color: #AAEEA4;
+	border-top-color: #AAEEA4;
+}
+
 /****END STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
 
 
@@ -117,16 +249,51 @@ ul {
 @media (min-width: 768px) {
 	.searchBox {
 		width: 60%;
+		left: 19%;
+	}
+
+	.searchBox .title {
+		font-size: 50px;
+	}
+
+	.searchBox .subTitle {
+		font-size: 20px;
+	}
+
+	.row.second {
+		margin-top: 10px;
+	}
+
+	.row.third {
+
+		margin-top: 30px;
+		font-size: 19px;
+	}
+
+	.row.third .col-xs-4 {
+		padding-top: 20px;
+	}
+
+	.typeahead, .tt-query, .tt-hint {
+		font-size: 22px;
 	}
 
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	.row.third {
+		margin-top: 30px;
+		font-size:20px;
+	}
 
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.row.third {
+		margin-top: 50px;
+		font-size: 24px;
+	}
 
 }

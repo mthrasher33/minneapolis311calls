@@ -1,22 +1,44 @@
 ﻿extends layout
 
 block content
-  div.minneapolisLandscape
 
 
-    div.
+    div.minneapolisLandscape.
       <div class="searchBox">
-        <div class="title">#{title} </div>
-        <div class="subTitle"> The First Minneapolis Comprehensive Rental Database </div>
-        <form action="/check" method="POST" role="form">
-            <div class="form-group">
-              <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search by Address">
-              <span class="input-group-btn">
-               <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-              </span>
-            </div>
-        </form><!-- /input-group -->
-      </div>
+        <div class="block"></div>
+        <div class="searchBoxText">
+          
+          <div class="row first">
+            <div class="title">#{title} </div>
+            <div class="subTitle"> The First Minneapolis Comprehensive Rental Database </div>
+          </div> <!-- /row first -->
+
+          <div class="row second">
+            <form action="/check" method="POST" role="form">
+              <div class="form-group">
+                <div class = "col-xs-9 col-md-10 col-lg-11">  
+                  <input id="search-input" type="text" name="typeahead" class="" placeholder="Search by Address" aria-describedby="sizing-addon1">
+                </div>
+
+                <div class = "col-xs-3 col-md-2 col-lg-1">
+                  <button id="search" type="submit" class="btn btn-primary">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                </div>
+              
+              </div><!-- /form-group -->
+            </form><!-- /input-group -->
+          </div><!-- /row second -->
+
+
+          <div class="row third">
+            <div class = "col-xs-4">1500 Landlords</div>
+            <div class = "col-xs-4">4000 Rental Properties</div>
+            <div class = "col-xs-4">23 Million Complaints</div>
+          </div> <!--/row third-->
+        </div><!--/searchBoxText-->
+      </div><!--/searchBox-->
+
 
     div.table100
       div.col-lg-12
