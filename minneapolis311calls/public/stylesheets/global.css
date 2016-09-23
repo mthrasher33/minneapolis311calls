@@ -101,6 +101,7 @@ body {
 		opacity: 1;
 		text-align: center;
 		color: #AAEEA4;
+		margin-top:10px;
 	}
 
 	/**END SEARCH BOX**/
@@ -268,7 +269,7 @@ footer ul {
 
 	.row.third {
 
-		margin-top: 30px;
+		margin-top: 25px;
 		font-size: 19px;
 	}
 
@@ -280,12 +281,16 @@ footer ul {
 		font-size: 22px;
 	}
 
+	.twitter-typeahead {
+		width:80%;
+	}
+
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.row.third {
-		margin-top: 30px;
+		margin-top: 25px;
 		font-size:20px;
 	}
 
@@ -294,7 +299,7 @@ footer ul {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	.row.third {
-		margin-top: 50px;
+		margin-top: 40px;
 		font-size: 24px;
 	}
 
