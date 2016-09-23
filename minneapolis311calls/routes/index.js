@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
 
     datalayer.getTopRentalLicenses(function (err, rows, fields) {
         if (!err) {
-            res.render('index', { results: rows, title: 'Express' });
+            res.render('index', { results: rows, title: 'Pork Belly' });
         }
         else
             console.log('Error while performing Query: ' + err);

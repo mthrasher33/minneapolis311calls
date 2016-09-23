@@ -1,6 +1,61 @@
-﻿ul {
+﻿@import url(https://fonts.googleapis.com/css?family=Leckerli%20One);
+
+ul {
     list-style: none;
 }
+
+
+
+/***MATT'S DEMO STYLE**/
+:root {
+	--lightgray : #E8EBE8;
+	--mediumgray : #B5B8B5;
+	--darkgray : #6A6B6A;
+	--lightgreen : #AAEEA4;
+	--darkgreen: #496B46;
+
+}
+
+/**NAVBAR**/
+.navbar.navbar-inverse.navbar-fixed-top {
+    	background-color: #AAEEA4;
+}
+/**END NAVBAR**/
+
+
+/**INDEX PAGE**/
+	.minneapolisLandscape {
+		background-image: url('/public/images/minneapolis.jpg');
+	}
+	.searchBox {
+		width: 100%;
+		background-color: #E8EBE8;
+		border-radius: 10px 10px 10px 10px;
+		margin: 10px auto;
+	}
+
+
+	/**SEARCH BOX**/
+	.searchBox .title {
+		font-family:  "Leckerli One";
+		font-size: 25px ;
+	}
+
+	/**END SEARCH BOX**/
+
+
+
+/**END INDEX PAGE**/
+
+
+
+.table100 {
+	display: none;
+}
+
+
+/***END MATT'S DEMO STYLE**/
+
 
 /****STYLES FOR TYPEAHEAD SEARCH COMPLETION*/
 .bs-example{
@@ -50,4 +105,28 @@
 }
 .tt-suggestion p {
 	margin: 0;
+}
+/****END STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
+
+
+/****STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
+
+
+/***MEDIA QUERIES***/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.searchBox {
+		width: 60%;
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

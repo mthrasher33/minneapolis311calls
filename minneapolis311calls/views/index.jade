@@ -1,34 +1,40 @@
 ﻿extends layout
 
 block content
-  h1= title
+  div.minneapolisLandscape
 
-  div.col-lg-6.
-    <form action="/check" method="POST" role="form">
-        <div class="form-group">
-          <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search for...">
-          <span class="input-group-btn">
-           <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-          </span>
-        </div>
-    </form><!-- /input-group -->
 
-  div.col-lg-12
-    p 100 Rental Properties in Minneapolis
+    div.
+      <div class="searchBox">
+        <div class="title">#{title} </div>
+        <div class="subTitle"> The First Minneapolis Comprehensive Rental Database </div>
+        <form action="/check" method="POST" role="form">
+            <div class="form-group">
+              <input id="search-input" type="text" name="typeahead" class="form-control typeahead tt-query"  autocomplete="off" spellcheck="false" placeholder="Search by Address">
+              <span class="input-group-btn">
+               <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+              </span>
+            </div>
+        </form><!-- /input-group -->
+      </div>
 
-  div
-  table.table.table-striped
-    thead
-      tr
-        th #
-        th Address
-        th Manager
-    tbody
-      each rrow, i in results
-        tr
-          td #{i+1}
-          td #{results[i].Address} 
-          td #{results[i].APP_NAME}
+    div.table100
+      div.col-lg-12
+        p 100 Rental Properties in Minneapolis
+
+      div
+      table.table.table-striped
+        thead
+          tr
+            th #
+            th Address
+            th Manager
+        tbody
+          each rrow, i in results
+            tr
+              td #{i+1}
+              td #{results[i].Address} 
+              td #{results[i].APP_NAME}
 
 
 block script
