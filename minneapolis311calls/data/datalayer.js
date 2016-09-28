@@ -20,7 +20,7 @@
                 connection.release();
 
                 callback(err, rows, fields);
-            }); 
+            });
         })
     };
 
@@ -75,9 +75,8 @@
         pool.getConnection(function (err, connection) {
               var q = '\
               SELECT distinct round(x(geom), 6) as x, round(y(geom), 6) as y, \
-              subjectname from Complaint311 \
+              permitnumber, ContactName, Address from RentalLicense \
               where st_contains(st_Envelope(geomfromtext(\'LineString(? ?, ? ?)\', 4326)), geom)\
-              limit 100\
               '
             // Use the connection
             connection.query(q, bbox, function (err, rows, fields) {
