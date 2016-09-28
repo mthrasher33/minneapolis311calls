@@ -24,11 +24,11 @@ body
 
   script(type='text/javascript').
     function onEachFeature(feature, layer) {
-      if (feature.properties && feature.properties.subjectname) {
-        layer.bindPopup(feature.properties.subjectname);
+      if (feature.properties && feature.properties.pop_up_text) {
+        layer.bindPopup(feature.properties.pop_up_text);
       }
     };
-    var mymap = L.map('mapid').setView([44.9944288,-93.2556099],15);
+    var mymap = L.map('mapid').setView([44.9944288,-93.2556099],17);
     L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
     $("#pointGrabber").submit( function(event) {
       event.preventDefault();
@@ -40,10 +40,7 @@ body
         "North": bbox.getNorth()
       };
       console.log(bounds_obj)
-      var params = $.param(bounds_obj)
-      var url = "/map/geojson?" + params
-      console.log(url)
-      $.getJSON(url, function( data ) {
+      $.getJSON("/map/geojson", bounds_obj, function( data ) {
         var geo = L.geoJson(data, {
           onEachFeature: onEachFeature
         })
