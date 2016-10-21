@@ -1,36 +1,57 @@
-﻿extends layout
+﻿
+
+extends layout
 
 block content
     h1 311 Call Results for Address
     div 
-        p You Searched for: #{address}
-       
+        //If there is one rental license at the property
+        h2 #{address}
+        p Property Manager:
+            a#landlordName #{results[0][0].ContactName}
+        p Manager since: #{moment(results[0][0].IssueDate).format('MM/DD/YYYY')}
+        p Tier: #{results[0][0].Tier}
+        
+        //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
+        if (locals.results[0].length > 1)
 
-       if (typeof locals.results[0] != 'undefined')
+          p There are more than one licenses for this property
+       
+       if (locals.results[1].length > 0)
+
         div
-            p Here is what we found!
+          h2 D3 graphics on 311 calls
+
+        div
+            h2 311 Calls at This Property
         div.col-lg-12
-        p Property Manager: 
-            a#landlordName #{results[0].ContactName}
-        p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
+        //p Property Manager: 
+        //    a#landlordName #{results[0].ContactName}
+        //p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
         
         div
         table.table.table-striped#results
           thead
             tr
-              th #
+              //th #
               th Type
               th Date of Incident
           tbody
-            each rrow, i in results
+            each rrow, i in results[1]
               tr
-                td #{i+1}
-                td #{results[i].TypeName} 
-                td #{moment(results[i].OpenedDateTime).format('dddd, MMMM Do YYYY')}
+                //td #{i+1}
+                td #{results[1][i].TypeName} 
+                td #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}                
+                //td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this format
        else 
          div
          p No 311 calls to this property
-    
+
+
+        div
+          h2 311 Calls in the neighborhood
+          include map
+
 block script
     script(type='text/javascript').
         $(document).ready(function() {
@@ -41,5 +62,8 @@ block script
                    window.location.href = '/landlordSearch/'+name;
                 });
 
-                $('#results').DataTable();
+                $('#results').DataTable({
+                  //default sort by most recent at the top
+                  "order": [[1, "desc"]]
+                });
             });

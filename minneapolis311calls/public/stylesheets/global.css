@@ -14,6 +14,8 @@ body {
 
 }
 
+
+
 .body-content {
 	/*weird stuff to overwrite native padding*/
 /*	margin-left: -50px;
@@ -22,6 +24,12 @@ body {
 }
 
 
+/**MAP STYLE**/
+
+      #mapid {
+        width: 1080px;
+        height: 500px;
+      }
 
 /***MATT'S DEMO STYLE**/
 :root {
@@ -110,6 +118,15 @@ body {
 
 /**END INDEX PAGE**/
 
+#landlordName {
+	cursor: pointer;
+	opacity: .8;
+}
+
+#landlordName:hover {
+	opacity: 1;
+	text-decoration: none;
+}
 footer {
 	    background-color: #6A6B6A;
 	    margin-bottom: 0px;
