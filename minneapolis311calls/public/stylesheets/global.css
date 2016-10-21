@@ -31,7 +31,12 @@ padding-top: 40px;
         width: 1080px;
         height: 500px;
       }
-
+/**CLUSTE STYL**/
+#cluster {
+	width: 1080px;
+	height: 500px;
+	background-color:yellow;
+}
 /***MATT'S DEMO STYLE**/
 :root {
 	--lightgray : #E8EBE8;

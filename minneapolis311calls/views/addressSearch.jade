@@ -12,6 +12,10 @@ block content
         p Manager since: #{moment(results[0][0].IssueDate).format('MM/DD/YYYY')}
         p Tier: #{results[0][0].Tier}
 
+        div
+          h2 D3 graphics on 311 calls
+          include cluster
+
         //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
         if (locals.results[0].length > 1)
 
@@ -19,8 +23,7 @@ block content
        
        if (locals.results[1].length > 0)
 
-        div
-          h2 D3 graphics on 311 calls
+
 
         div
             h2 311 Calls at This Property
@@ -49,10 +52,10 @@ block content
 
 
         div
-          h2 311 Calls in the neighborhood
+          h2 Other rental properties in the neighborhood
           include map
 
-script(src="/javascripts/d3.min.js")
+
 
 block script
     script(type='text/javascript').
