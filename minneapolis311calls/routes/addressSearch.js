@@ -15,7 +15,16 @@ router.get('/:address', function (req, res) {
             console.log('Starting query')
             //console.log(rows);
             if (rows.length) { //if we have results
-                res.render('addressSearch', { address: req.params.address, results: rows, title: 'Address Search' });
+                var propertyCountForOwner = null;
+                datalayer.PropertiesOwnedByLandlord(rows[0][0].APP_NAME, function (err, properties, fields) {
+                    if (!err) {
+                        propertyCountForOwner = properties[0].length;
+                        res.render('addressSearch', { address: req.params.address, results: rows, propertyCountForOwner: propertyCountForOwner, title: 'Address Search' });
+                    }
+                    else
+                        console.log('Error while performing Query: ' + err);
+                });
+                
             } else { //we have no results
 //                res.render('addressSearch', { address: req.params.address, title: 'Address Search' });
             };

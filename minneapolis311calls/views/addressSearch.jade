@@ -5,7 +5,7 @@ extends layout
 block content
     div.container
         div.row
-            div.col-md-4
+            div.col-md-4.property-summary
              div.panel.panel-default
               div.panel-heading Property Summary
               div.panel-body
@@ -16,14 +16,22 @@ block content
                 
                 p 
                  i.kv-icon.fa.fa-user-circle
-                 span Property Manager:
-                 a#landlordName #{results[0][0].ContactName}
+                 span Property Manager: #{results[0][0].ContactName}
+                p 
+                 i.kv-icon.fa.fa-briefcase
+                 span Owner: #{results[0][0].APP_NAME}
                 p 
                  i.fa.fa-calendar-o.kv-icon
-                 span Manager Since: #{moment(results[0][0].IssueDate).format('MM/DD/YYYY')}
+                 span Owner Since: #{moment(results[0][0].IssueDate).format('MM/DD/YYYY')}
                 p
                  i.fa.fa-list-ol.kv-icon
                  span Property Quality: #{results[0][0].Tier}
+                p
+                 i.fa.fa-hashtag.kv-icon
+                 span Properties Owned: #{propertyCountForOwner}
+                 
+                div
+                 a(href="/landlordsearch/#{results[0][0].APP_NAME}") View All Properties
 
 
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
@@ -64,15 +72,10 @@ block content
 block script
     script(type='text/javascript').
         $(document).ready(function() {
-                $('#landlordName').click(function(){
-                   //alert("clicked");
-                   var name = $('#landlordName').text();
-                   //alert(name);
-                   window.location.href = '/landlordSearch/'+name;
-                });
-
                 $('#results').DataTable({
                   //default sort by most recent at the top
-                  "order": [[1, "desc"]]
+                  "order": [[1, "desc"]],
+                  "bLengthChange": false,
+                  "searching": false
                 });
             });

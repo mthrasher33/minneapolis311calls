@@ -48,6 +48,18 @@
         })
     };
 
+    this.PropertiesOwnedByLandlord = function (ownerName, callback) {
+        pool.getConnection(function (err, connection) {
+            // Use the connection
+            connection.query("Call PropertiesOwnedByLandlord(?)", ownerName, function (err, rows, fields) {
+
+                // And done with the connection.
+                connection.release();
+                callback(err, rows, fields);
+            });
+        })
+    };
+
     this.matchPartialAddress = function (partialAddress, callback) {
         pool.getConnection(function (err, connection) {
             // Use the connection
