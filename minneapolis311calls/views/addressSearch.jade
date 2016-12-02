@@ -10,17 +10,17 @@ block content
               div.panel-heading Property Summary
               div.panel-body
                 //If there is one rental license at the property
-                p
+                p#address
                  i.kv-icon.fa.fa-home
-                 span #{address}
-                
-                p 
+                 span  #{address}
+
+                p
                  i.kv-icon.fa.fa-user-circle
                  span Property Manager: #{results[0][0].ContactName}
-                p 
+                p
                  i.kv-icon.fa.fa-briefcase
                  span Owner: #{results[0][0].APP_NAME}
-                p 
+                p
                  i.fa.fa-calendar-o.kv-icon
                  span Owner Since: #{moment(results[0][0].IssueDate).format('MM/DD/YYYY')}
                 p
@@ -29,7 +29,7 @@ block content
                 p
                  i.fa.fa-hashtag.kv-icon
                  span Properties Owned: #{propertyCountForOwner}
-                 
+
                 div
                  a(href="/landlordsearch/#{results[0][0].APP_NAME}") View All Properties
 
@@ -37,10 +37,10 @@ block content
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
             if (locals.results[0].length > 1)
               p There are more than one licenses for this property
-       
+
             if (locals.results[1].length > 0)
                 div.col-md-8
-                    //p Property Manager: 
+                    //p Property Manager:
                     //    a#landlordName #{results[0].ContactName}
                     //p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
                     table.table.table-striped.table-bordered#results
@@ -53,10 +53,10 @@ block content
                         each rrow, i in results[1]
                           tr
                             //td #{i+1}
-                            td #{results[1][i].TypeName} 
-                            td #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}                
+                            td #{results[1][i].TypeName}
+                            td #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}
                             //td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this format
-            else 
+            else
                 div.col-md-8
                 p No 311 calls to this property
 
