@@ -66,7 +66,7 @@
     <Content Include="views\about.jade" />
     <Content Include="views\addressSearch.jade" />
     <Content Include="views\addressSearch404.jade" />
-    <Content Include="views\addressSearchDYM.jade" />
+    <Content Include="views\addressSearchDidYouMean.jade" />
     <Content Include="views\contact.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\landlordSearch.jade" />

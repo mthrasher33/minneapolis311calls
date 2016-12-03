@@ -54,7 +54,7 @@ router.post('/check', function (req, res) {
 
         //if no partial match, display a list of all possibilites (14 --> 1408 Monroe St. NE, 1424 Madison St. NE, etc.)
         else if (rows.length > 1) {
-            res.render('addressSearchDYM', {results: rows, title: "Search Suggestions"}); //send to the did you mean page?
+            res.render('addressSearchDidYouMean', {results: rows, title: "Search Suggestions"}); //send to the did you mean page?
         }
 
         //if we have nothing, display a sorry message and allow them to link back to the search box
