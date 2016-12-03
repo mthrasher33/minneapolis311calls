@@ -5,13 +5,24 @@ block extraHeader
 
 
 block content
-    h1 311 Call Results for Landlord (all properties they manage)
-    div 
-        p You Searched for: #{landlordName}
-    div
-        p Here is what we found!
-    div.col-lg-12
-    p Manager since: #{resultsLl[0].IssueDate}
+   div.container
+    div.row
+     div.col-md-4
+      div.panel.panel-default
+       div.panel-heading
+        i.kv-icon.fa.fa-briefcase
+        span Owner: #{landlordName}
+     div.col-md-4
+      div.panel.panel-default
+       div.panel-heading
+        i.kv-icon.fa.fa-briefcase
+        span Owner Since: #{moment(resultsLl[0].IssueDate).format('MM/DD/YYYY')}
+     div.col-md-4
+      div.panel.panel-default
+       div.panel-heading
+        i.kv-icon.fa.fa-briefcase
+        span Properties Owned: #{propertyCountForOwner} &nbsp;
+         a(href="#AllPropertiesMap") (View Map)
 
     div
     table.table.table-striped#results
@@ -28,6 +39,13 @@ block content
             td#address #{resultsLl[i].Address}
             td #{resultsLl[i].TypeName} 
             td #{moment(resultsLl[i].OpenedDateTime).format('dddd, MMMM Do YYYY')}
+
+    div.row
+        div.col-md-12
+            div.panel.panel-default
+            div.panel-heading.text-align-center Properties Owned
+            //include map
+
 block script
     script(type='text/javascript').
         $(document).ready(function() {
