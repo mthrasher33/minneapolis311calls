@@ -4,7 +4,7 @@ extends layout
 
 block content
     div.container
-        div.row
+        div.row.margin-bottom-10
             div.col-md-4.property-summary
              div.panel.panel-default
               div.panel-heading Property Summary
@@ -29,8 +29,10 @@ block content
                 p
                  i.fa.fa-hashtag.kv-icon
                  span Properties Owned: #{propertyCountForOwner}
+                 br
+                 span 
 
-                div
+                div.view-all-properties
                  a(href="/landlordsearch/#{results[0][0].APP_NAME}") View All Properties
 
 
@@ -58,13 +60,15 @@ block content
                             //td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this format
             else
                 div.col-md-8
-                p No 311 calls to this property
+                 div.text-align-center.property-summary.no-311-calls 
+                  span.margin-right-10 No 311 Calls for this Property
+                  i.fa.fa-hand-peace-o.kv-icon
 
 
         div.row
             div.col-md-12
              div.panel.panel-default
-                div.panel-heading Other rental properties in the neighborhood
+                div.panel-heading.text-align-center Rental Properties in the Neighborhood
                 include map
 
 
