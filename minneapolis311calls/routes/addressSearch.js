@@ -14,7 +14,8 @@ router.get('/:address', function (req, res) {
         if (!err) {
             console.log('Starting query')
             //console.log(rows);
-            if (rows.length) { //if we have results
+            //if we have results
+            if (rows.length) { 
                 var propertyCountForOwner = null;
                 datalayer.PropertiesOwnedByLandlord(rows[0][0].APP_NAME, function (err, properties, fields) {
                     if (!err) {
