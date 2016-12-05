@@ -2,39 +2,80 @@
 
 block content
 
+    div.row
+      div.minneapolisLandscape.
+        <div class="searchBox">
+          <div class="block"></div>
+          <div class="searchBoxText">
+            
+            <div class="row first">
+              <div class="title">#{title} </div>
+              <div class="subTitle"> The First Minneapolis Comprehensive Rental Database </div>
+            </div> <!-- /row first -->
 
-    div.minneapolisLandscape.
-      <div class="searchBox">
-        <div class="block"></div>
-        <div class="searchBoxText">
-          
-          <div class="row first">
-            <div class="title">#{title} </div>
-            <div class="subTitle"> The First Minneapolis Comprehensive Rental Database </div>
-          </div> <!-- /row first -->
-
-          <div class="row second">
-            <form action="/check" method="POST" role="form">
-              <div class="form-group">
-                <div class = "col-md-12">  
-                  <input id="search-input" type="text" name="typeahead" class="" placeholder="Search by Address" aria-describedby="sizing-addon1">
-                  <button id="search" type="submit" class="btn btn-primary">
-                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                  </button>                
-                </div>
-              
-              </div><!-- /form-group -->
-            </form><!-- /input-group -->
-          </div><!-- /row second -->
+            <div class="row second">
+              <form action="/check" method="POST" role="form">
+                <div class="form-group">
+                  <div class = "col-md-12">  
+                    <input id="search-input" type="text" name="typeahead" class="" placeholder="Search by Address" aria-describedby="sizing-addon1">
+                    <button id="search" type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>                
+                  </div>
+                
+                </div><!-- /form-group -->
+              </form><!-- /input-group -->
+            </div><!-- /row second -->
 
 
-          <div class="row third">
-            <div class = "col-xs-4">1500 Landlords</div>
-            <div class = "col-xs-4">4000 Rental Properties</div>
-            <div class = "col-xs-4">23 Million Complaints</div>
-          </div> <!--/row third-->
-        </div><!--/searchBoxText-->
-      </div><!--/searchBox-->
+            <div class="row third">
+              <div class = "col-xs-4">1500 Landlords</div>
+              <div class = "col-xs-4">4000 Rental Properties</div>
+              <div class = "col-xs-4">23 Million Complaints</div>
+            </div> <!--/row third-->
+          </div><!--/searchBoxText-->
+        </div><!--/searchBox-->
+
+    div.row
+      div.learnMore.red
+        div.col-xs-12.container
+         p#finding Finding A Good Place to Rent is Easy 
+        div.arrow-down
+
+      div.learnMore.red-light
+        div.col-xs-7
+         p#quote You know a lot about your place before you rent it: the neighborood, the cost, the quality.
+        div.col-xs-5.neighborhood
+      
+      div.learnMore.purple
+        div.col-xs-12.container
+          p#finding Finding A Good Landlord is Tough
+        div.arrow-down
+
+
+      div.learnMore.purple-light
+        div.col-xs-5.landlord
+        div.col-xs-7
+         p#quote But how much do you know about your landlord?
+
+
+      div.learnMore.yellow
+       div.col-xs-4
+        p#empower Pork belly empowers renters
+        i.glyphicon.glyphicon-certificate
+
+       div.col-xs-4 
+        p#choose To choose landlords
+        i.glyphicon.glyphicon-scale
+       
+       div.col-xs-4
+        p#excellent With excellent service records
+        i.glyphicon.glyphicon-bullhorn
+       
+       div.arrow-down
+
+
+
 
 
     div.table100
