@@ -16,7 +16,7 @@ block content
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-briefcase
-        span Owner Since: #{moment(resultsLl[0].IssueDate).format('MM/DD/YYYY')}
+        span Owner Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
@@ -33,12 +33,12 @@ block content
           th Type
           th Date of Incident
       tbody
-        each rrow, i in resultsLl
+        each rrow, i in calls311
           tr
             td #{i+1}
-            td#address #{resultsLl[i].Address}
-            td #{resultsLl[i].TypeName} 
-            td #{moment(resultsLl[i].OpenedDateTime).format('MM-DD-YYYY')}
+            td#address #{calls311[i].Address}
+            td #{calls311[i].TypeName} 
+            td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
 
     div.row
         div.col-md-12

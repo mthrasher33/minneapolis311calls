@@ -9,11 +9,15 @@ router.get('/:landlordName', function (req, res) {
         datalayer.rental311callsByLandlord(req.params.landlordName, function (err, rows, fields) {
             if (!err) {     
                 var propertyCountForOwner = null;
-                datalayer.PropertiesOwnedByLandlord(rows[0][0].APP_NAME, function (err, properties, fields) {
+                datalayer.PropertiesOwnedByLandlord(req.params.landlordName, function (err, properties, fields) {
                     if (!err) {
                         var firstResult = rows[0];
                         propertyCountForOwner = properties[0].length;
-                        res.render('landlordSearch', { landlordName: req.params.landlordName, resultsLl: rows[0], propertyCountForOwner: propertyCountForOwner, title: 'Landlord Search' });
+                        //Get the minimum data
+                        //see here: http://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
+                        var minDate = Math.max.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
+                        var ownerSinceDate = new Date(minDate);
+                        res.render('landlordSearch', { landlordName: req.params.landlordName, calls311: firstResult, propertyCountForOwner: propertyCountForOwner, ownerSinceDate: ownerSinceDate,  title: 'Landlord Search' });
                     }
                     else
                         console.log('Error while performing Query: ' + err);

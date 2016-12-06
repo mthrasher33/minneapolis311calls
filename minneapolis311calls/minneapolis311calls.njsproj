@@ -94,6 +94,7 @@
     <Folder Include="typings\globals\express\" />
     <Folder Include="typings\globals\geojson\" />
     <Folder Include="typings\globals\jade\" />
+    <Folder Include="typings\globals\linq\" />
     <Folder Include="typings\globals\mime\" />
     <Folder Include="typings\globals\moment\" />
     <Folder Include="typings\globals\morgan\" />
@@ -113,6 +114,7 @@
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\geojson\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\linq\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\moment\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />

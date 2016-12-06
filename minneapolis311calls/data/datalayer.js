@@ -87,7 +87,7 @@
         pool.getConnection(function (err, connection) {
               var q = '\
               SELECT distinct round(x(geom), 6) as x, round(y(geom), 6) as y, \
-              permitnumber, ContactName, Address from RentalLicense \
+              permitnumber, ContactName, App_Name, Address from RentalLicense \
               where st_contains(st_Envelope(geomfromtext(\'LineString(? ?, ? ?)\', 4326)), geom)\
               '
             // Use the connection

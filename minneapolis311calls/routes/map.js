@@ -26,13 +26,17 @@ router.get('/geojson', function (req, res){
           var outlist = []
           for (i in rows) {
             row = rows[i]
-            landlord = row['ContactName']
-            landlord_encoded = encodeURIComponent(landlord)
+            owner = row['App_Name']
+            owner_encoded = encodeURIComponent(owner)
             address = row['Address']
             address_encoded = encodeURIComponent(address)
+            landlord = row['ContactName']
+            landlord_encoded = encodeURIComponent(landlord)
             row["link"] = address
-            row['pop_up_text'] = '<p><a href=../landlordSearch/{landlord_encoded}>{landlord}</a></p>'.format({landlord: landlord, landlord_encoded: landlord_encoded})
-            row['pop_up_text'] += '<p><a href=../addressSearch/{address_encoded}>{address}</a></p>'.format({address: address, address_encoded: address_encoded})
+            row['pop_up_text'] = '<p><a href=../addressSearch/{address_encoded}>{address}</a></p>'.format({ address: address, address_encoded: address_encoded })
+            row['pop_up_text'] += '<p><a href=../landlordSearch/{owner_encoded}>{owner}</a></p>'.format({ owner: owner, owner_encoded: owner_encoded})
+            row['pop_up_text'] += '<p>Landlord: <a href=../landlordSearch/{landlord_encoded}>{landlord}</a></p>'.format({ landlord: landlord, landlord_encoded: landlord_encoded })
+
             outlist.push(row)
           };
           console.log(outlist)
