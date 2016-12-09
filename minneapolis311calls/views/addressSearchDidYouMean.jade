@@ -1,10 +1,16 @@
 ﻿extends layout
 
 block content
-    h1 You're close!
-    p Did you mean: 
-      ul 
-    - for (var i = 0, len = results.length; i<len; i ++) {
-        li 
-           a(href="/addressSearch/"+ results[i].Address )  #{results[i].Address}      
-      - }
+   div.container
+    div.row
+        div.div.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
+         div.panel.panel-primary
+          div.panel-heading.text-center You searched for: #{addressSearched}
+          div.panel-body
+           div
+            p Did you mean: 
+            - for (var i = 0, len = results.length; i<len; i ++) {
+            div
+             i.fa.fa-circle.did-you-mean-list
+             a(href="/addressSearch/"+ results[i].Address )  #{results[i].Address}      
+            - }
