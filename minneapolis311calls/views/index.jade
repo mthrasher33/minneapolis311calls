@@ -75,28 +75,6 @@ block content
        div.arrow-down
 
 
-
-
-
-    div.table100
-      div.col-lg-12
-        p 100 Rental Properties in Minneapolis
-
-      div
-      table.table.table-striped
-        thead
-          tr
-            th #
-            th Address
-            th Manager
-        tbody
-          each rrow, i in results
-            tr
-              td #{i+1}
-              td #{results[i].Address} 
-              td #{results[i].APP_NAME}
-
-
 block script
     script(type='text/javascript').
         $(document).ready(function() {

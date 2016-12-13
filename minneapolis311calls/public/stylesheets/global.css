@@ -641,6 +641,16 @@ div.learnMore.purple-light div.col-xs-7 p#quote {
 	text-shadow: 1px 1px 1px black;
 }
 
+img.bio-image{
+    height: auto;
+    width: 125px;
+    border-radius: 50%;
+}
+
+.bottom-buffer{
+    margin-bottom: 20px;
+}
+
 /***END INDEX PAGE LEARN MORE ROW***/
 
 
