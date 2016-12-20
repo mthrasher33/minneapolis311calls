@@ -59,7 +59,7 @@ router.post('/check', function (req, res) {
 
         //if we have nothing, display a sorry message and allow them to link back to the search box
         else {            
-            res.render('addressSearch404', { title: 'No Results' });
+            res.render('addressSearch404', { title: 'No Results', addressSearched: req.body.typeahead });
         };
 
    

@@ -5,9 +5,10 @@ block content
     div.row
         div.div.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
          div.panel.panel-primary
-          div.panel-heading.text-center You searched for: #{addressSearched}
+          div.panel-heading.text-center Multiple Possible Matches
           div.panel-body
            div
+            p You searched for: #{addressSearched}
             p Did you mean: 
             - for (var i = 0, len = results.length; i<len; i ++) {
             div

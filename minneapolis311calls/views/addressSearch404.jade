@@ -1,4 +1,12 @@
 ﻿extends layout
 
 block content
-    h1 I'm sorry, this is not a rental property.
+   div.container
+    div.row
+        div.div.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3.col-xs-8.col-xs-offset-2
+         div.panel.panel-primary
+          div.panel-heading.text-center No Matching Address
+          div.panel-body
+           div.text-align-center Address Searched: #{addressSearched}
+           br
+           div.text-align-center We were unable to find that address, please try another.
