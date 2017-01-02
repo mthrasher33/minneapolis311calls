@@ -25,8 +25,9 @@ html
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                button.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search')
-                    span.glyphicon.glyphicon-search.tablet
+                if path !== "/"
+                    button.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search')
+                        span.glyphicon.glyphicon-search.tablet
                 a.navbar-brand(href='/') Pork Belly
 
             .navbar-collapse.collapse.menu
@@ -37,18 +38,18 @@ html
                         a(href='/about') About
                     li
                         a(href='/contact') Contact
-            .navbar-collapse.collapse.search
+            if path !== "/"
+                .navbar-collapse.collapse.search                
+                        if path !== "/"
+                            ul.nav.navbar-nav
+                                li.navbar-search-li.
+                                    <form action="/check" method="POST" role="form">
+                                      <div class="form-group">
+                                          <input id="search-input" type="text" name="typeahead" class="navbar-search" placeholder="Search by Address" aria-describedby="sizing-addon1">
+                                          <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
                 
-                    if path !== "/"
-                        ul.nav.navbar-nav
-                            li.navbar-search-li.
-                                <form action="/check" method="POST" role="form">
-                                  <div class="form-group">
-                                      <input id="search-input" type="text" name="typeahead" class="navbar-search" placeholder="Search by Address" aria-describedby="sizing-addon1">
-                                      <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
-                
-                                  </div><!-- /form-group -->
-                                </form><!-- /input-group -->
+                                      </div><!-- /form-group -->
+                                    </form><!-- /input-group -->
  
     
     .body-content
