@@ -1,26 +1,6 @@
-//doctype html
-//html
-//  head
-//    meta(charset='utf-8')
-//    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-//    title #{title} - its a map bitches
-//    link(rel='stylesheet', href='/stylesheets/style.css')
-//    link(rel='stylesheet',href='/stylesheets/bootstrap.min.css')
-//    link(rel='stylesheet',href='/stylesheets/global.css')
-//    link(rel='stylesheet', href='/stylesheets/leaflet.css')
-//    script(src="/javascripts/leaflet.js")
-//    script(src="/javascripts/jquery-3.1.0.min.js")
-
-//    style.
-//      #mapid {
-//        width: 1080px;
-//        height: 500px;
-//      }
-//body
 div.px-2
   #mapid
-//form(name="frm1" id="pointGrabber")
-//  input(type="submit" value="get those points")
+
 
 script(src="/javascripts/leaflet.js")
 script(src="/javascripts/jquery-3.1.0.min.js")
@@ -51,35 +31,18 @@ block script
     console.log(addr)
     console.log(addr)
     function pointToLayer(geoj, latlng) {
+      console.log(latlng)
       if (geoj["properties"]["link"] == addr) {
         return L.circleMarker(latlng, homeMarker)
       }
       console.log('we made it here')
       return L.circleMarker(latlng, notHomeMarker)
-
-
     }
 
-
-
     var mymap = L.map('mapid').setView([#{results[0][0].Y}, #{results[0][0].X}], 17)
-    //var mymap = L.map('mapid').setView([44.9944288,-93.2556099],15);
-
-    //var homeIcon = L.Icon.extend ({
-    //  options : {
-    //    shadowURL: 'http://devfloat.net/wp-content/uploads/2015/10/orange-location-map-icon.jpg',
-    //    iconSize: [38,95]
-    //  }
-    //});
-
-    //var redHomeIcon = new homeIcon({iconUrl: 'http://devfloat.net/wp-content/uploads/2015/10/orange-location-map-icon.jpg'});
 
     L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
-    //L.marker([#{results[0][0].Y}, #{results[0][0].X}], {icon: redHomeIcon}).addTo(mymap).bindPopup("I am a green Leaf");
-
-    //$("#pointGrabber").submit( function(event) {
     $(document).ready(function(){
-      //event.preventDefault();
       var bbox = mymap.getBounds()
       var bounds_obj = {
         "West": bbox.getWest(),
@@ -91,7 +54,6 @@ block script
         var geo = L.geoJson(data, {
           onEachFeature: onEachFeature,
           pointToLayer:pointToLayer
-
         })
         geo.addTo(mymap);
       });
