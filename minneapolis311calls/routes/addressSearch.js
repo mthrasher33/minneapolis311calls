@@ -4,7 +4,7 @@ var datalayer = require('../data/datalayer.js');
 
 //If the address is not a rental property
 router.get('/', function (req, res) {
-    res.render('addressSearch404', { title: 'Address Search | Not Found' });
+    res.render('addressSearch404', { title: 'Address Search | Not Found', path: req.path });
 });
 
 
@@ -20,7 +20,8 @@ router.get('/:address', function (req, res) {
                 datalayer.PropertiesOwnedByLandlord(rows[0][0].APP_NAME, function (err, properties, fields) {
                     if (!err) {
                         propertyCountForOwner = properties[0].length;
-                        res.render('addressSearch', { address: req.params.address, results: rows, propertyCountForOwner: propertyCountForOwner, title: 'Address Search' });
+                        res.render('addressSearch', { address: req.params.address, results: rows, propertyCountForOwner: propertyCountForOwner, title: 'Address Search', path: req.path });
+                        console.log(req.path)
                     }
                     else
                         console.log('Error while performing Query: ' + err);

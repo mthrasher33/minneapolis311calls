@@ -17,7 +17,7 @@ router.get('/:landlordName', function (req, res) {
                         //see here: http://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
                         var minDate = Math.max.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
                         var ownerSinceDate = new Date(minDate);
-                        res.render('landlordSearch', { landlordName: req.params.landlordName, calls311: firstResult, propertyCountForOwner: propertyCountForOwner, ownerSinceDate: ownerSinceDate,  title: 'Landlord Search' });
+                        res.render('landlordSearch', { landlordName: req.params.landlordName, calls311: firstResult, propertyCountForOwner: propertyCountForOwner, ownerSinceDate: ownerSinceDate, title: 'Landlord Search', path: req.path});
                     }
                     else
                         console.log('Error while performing Query: ' + err);

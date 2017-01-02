@@ -8,7 +8,8 @@ router.get('/', function (req, res) {
 
     datalayer.getTopRentalLicenses(function (err, rows, fields) {
         if (!err) {
-            res.render('index', { results: rows, title: 'Pork Belly' });
+            res.render('index', { results: rows, title: 'Pork Belly', path: req.path });
+            console.log(req.path);
         }
         else
             console.log('Error while performing Query: ' + err);
@@ -68,12 +69,14 @@ router.post('/check', function (req, res) {
 });
 /* GET about page. */
 router.get('/about', function (req, res) {
-    res.render('about', { title: 'About' });
+    res.render('about', { title: 'About', path: req.path });
+    console.log(req.path);
 });
 
 /* GET contact page. */
 router.get('/contact', function (req, res) {
-    res.render('contact', { title: 'Contact' });
+    res.render('contact', { title: 'Contact', path: req.path });
+    console.log(req.path);
 });
 
 module.exports = router;

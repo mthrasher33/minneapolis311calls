@@ -15,17 +15,21 @@ html
 
     //link(rel="icon" type="image/x-icon" href="/favicon.ico")
 
- 
+
   body
     .navbar.navbar-default.navbar-fixed-top
         .container
             .navbar-header
-                button.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse')
+
+                button.menu.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.menu')
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
+                button.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search')
+                    span.glyphicon.glyphicon-search.tablet
                 a.navbar-brand(href='/') Pork Belly
-            .navbar-collapse.collapse
+
+            .navbar-collapse.collapse.menu
                 ul.nav.navbar-nav
                     li
                         a(href='/') Home
@@ -33,6 +37,19 @@ html
                         a(href='/about') About
                     li
                         a(href='/contact') Contact
+            .navbar-collapse.collapse.search
+                
+                    if path !== "/"
+                        ul.nav.navbar-nav
+                            li.navbar-search-li.
+                                <form action="/check" method="POST" role="form">
+                                  <div class="form-group">
+                                      <input id="search-input" type="text" name="typeahead" class="navbar-search" placeholder="Search by Address" aria-describedby="sizing-addon1">
+                                      <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
+                
+                                  </div><!-- /form-group -->
+                                </form><!-- /input-group -->
+ 
     
     .body-content
         block content
