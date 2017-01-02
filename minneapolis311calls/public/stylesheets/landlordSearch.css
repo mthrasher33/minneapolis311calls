@@ -5,3 +5,7 @@ td#address {
 td#address:hover {
 	color: blue;
 }
+#AllPropertiesMap {
+	width: 100%;
+	height: 400px
+}
