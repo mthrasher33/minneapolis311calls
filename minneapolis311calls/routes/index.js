@@ -1,6 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var nodemailer = require('nodemailer');
 var datalayer = require('../data/datalayer.js');
 
 /* GET home page. */
@@ -77,6 +78,38 @@ router.get('/about', function (req, res) {
 router.get('/contact', function (req, res) {
     res.render('contact', { title: 'Contact', path: req.path });
     console.log(req.path);
+});
+
+/*POST contact page (for sending emails)*/
+/*Source for this: https://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer*/
+router.post('/contact', function(req,res){
+    var mailOpts, smtpTrans;
+
+    smtpTrans = nodemailer.createTransport('SMTP', {
+        service: 'Gmail',
+        auth: {
+            user: "minneapolis311calls@gmail.com",
+            pass: "fri$ndgramming"
+        }
+    });
+
+    mailOpts = {
+        from: req.body.name + ' &lt;' + req.body.email + '&gt;',
+        to: 'matthew.j.thrasher@gmail.com, adamloien@gmail.com, mikemommsen@gmail.com',
+        subject: '311 Minneapolis Inquiry from ' + req.body.name + " at " + req.body.email,
+        text: req.body.message
+    };
+
+    smtpTrans.sendMail(mailOpts, function(error, response){
+        if(!error){
+            console.log('email sent to: ' + mailOpts.to);
+            console.log('with this content: ' + mailOpts.text);
+            res.render('contact', {msg: 'Success'});
+        } else {
+            console.log(error);
+        }
+    });
+
 });
 
 module.exports = router;

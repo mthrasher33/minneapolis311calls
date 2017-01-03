@@ -1,9 +1,55 @@
 ﻿extends layout
 
 block content
-    h1 CONTACT PAGE COMING SOON
-    ul
-        li
-            a(href='javascript:history.back()') Back
-        li
-            a(href='/') Home
+	div.container
+		div.row 
+			h1 Contact Us
+		div.row.
+			<form action="/contact" method="post" role="form">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-12">
+							<label class="contact" for="name">Name</label>
+							<input class="contact" name="name" type="text" id="name"></input>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<label class="contact" for="email">Email</label>
+							<input class="contact" name="email" type="text" id="email"></input>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<label class="contact" for="message">Message</label>
+							<textarea class="contact" name="message" type="text" id="message" rows="12"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<button id="contact" type="submit" class="btn btn-primary">
+								Submit
+								<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

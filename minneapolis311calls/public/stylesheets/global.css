@@ -353,7 +353,7 @@ button.transparent-button {
 
 .navbar-remove-glyph {
     position: absolute;
-    top: 18px;
+    top: 19px;
     right: 9%;
     font-size: 16px;
     display:none;
@@ -592,6 +592,25 @@ footer ul {
   position: absolute;
 
 }
+
+
+
+/***CONTACT US***/
+input.contact, textarea.contact {
+  width: 250px;
+  margin-top: 10px;
+}
+
+textarea.contact {
+  vertical-align: top;
+}
+
+label.contact {
+  width: 80px;
+  margin-top: 10px;
+}
+
+/***END CONTACT US***/
 
 
 
