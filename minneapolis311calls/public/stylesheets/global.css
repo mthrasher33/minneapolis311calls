@@ -610,6 +610,17 @@ label.contact {
   margin-top: 10px;
 }
 
+button#contact {
+  margin-top:15px;
+  margin-left: 247px;
+  cursor:pointer;
+  opacity: .8;
+}
+
+button#contact:hover {
+  opacity: 1;
+}
+
 /***END CONTACT US***/
 
 
