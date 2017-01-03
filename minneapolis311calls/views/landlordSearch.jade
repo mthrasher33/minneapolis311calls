@@ -22,23 +22,29 @@ block content
        div.panel-heading
         i.kv-icon.fa.fa-briefcase
         span Properties Owned: #{propertyCountForOwner} &nbsp;
-         a(href="#AllPropertiesMap") (View Map)
+         //a(href="#AllPropertiesMap") (View Map)
 
     div
-    table.table.table-striped#results
-      thead
-        tr
-          th #
-          th Address
-          th Type
-          th Date of Incident
-      tbody
-        each rrow, i in calls311
-          tr
-            td #{i+1}
-            td#address #{calls311[i].Address}
-            td #{calls311[i].TypeName}
-            td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
+    if (locals.calls311.length > 0)
+
+        table.table.table-striped#results
+          thead
+            tr
+              th #
+              th Address
+              th Type
+              th Date of Incident
+          tbody
+            each rrow, i in calls311
+              tr
+                td #{i+1}
+                td#address #{calls311[i].Address}
+                td #{calls311[i].TypeName}
+                td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
+    else
+         div.text-align-center.property-summary.no-311-calls 
+                  span.margin-right-10 No 311 Calls for this Landlord
+                  i.fa.fa-hand-peace-o.kv-icon
 
     div.row
         div.col-md-12
