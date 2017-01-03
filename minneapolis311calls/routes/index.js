@@ -95,7 +95,7 @@ router.post('/contact', function(req,res){
 
     mailOpts = {
         from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-        to: 'matthew.j.thrasher@gmail.com, adamloien@gmail.com, mikemommsen@gmail.com',
+        to: 'minneapolis311calls@gmail.com',
         subject: '311 Minneapolis Inquiry from ' + req.body.name + " at " + req.body.email,
         text: req.body.message
     };
