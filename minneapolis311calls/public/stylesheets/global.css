@@ -298,7 +298,9 @@ li.navbar-search-li {
     margin-right:10px;
     border-radius: 5px 5px 5px 5px;
     margin-top: 12px;
+    padding-left: 65px;
     padding-right: 29px;
+    font-size:16px;
 }
 
 .navbar-search:focus {
@@ -315,8 +317,47 @@ span.glyphicon.glyphicon-search.tablet {
 
 .navbar-search-glyph {
     position: absolute;
-    right: 5%;
-    top: 20px;
+    left: 5%;
+    top: 19px;
+    font-size:16px;
+    cursor:pointer;
+    color:black;
+}
+
+   li.nav-close {
+    background-color: antiquewhite;
+    color: purple;
+    margin-right: 4%;
+    /* text-align: center; */
+    cursor: pointer;
+        float: right;
+    border-radius: 2px;
+    padding: 5px 25px 5px 25px;
+    margin-top: -15px;
+        margin-bottom: 7px;
+        opacity: .9;
+        display:none;
+    }
+
+   li.nav-close:hover {
+       opacity: 1;
+   }
+
+button.transparent-button {
+    background-color: transparent;
+    border-color:transparent;
+    cursor:default;
+    border: 0px;
+    outline: none;
+}
+
+.navbar-remove-glyph {
+    position: absolute;
+    top: 18px;
+    right: 9%;
+    font-size: 16px;
+    display:none;
+    cursor:pointer;
 }
 
 @media (max-width: 767px) {
@@ -739,7 +780,10 @@ img.bio-image{
         width:300px;
         margin-left: 0px;
         margin-right:0px;
+        padding-left:45px;
     }
+
+
 
         .navbar-collapse.collapse.menu {
     float:left;

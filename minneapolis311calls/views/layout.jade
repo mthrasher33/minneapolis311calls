@@ -38,6 +38,9 @@ html
                         a(href='/about') About
                     li
                         a(href='/contact') Contact
+                    
+                    li.hidden-md.hidden-lg.nav-close.menu.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.menu') Close
+
             if path !== "/"
                 .navbar-collapse.collapse.search                
                         if path !== "/"
@@ -46,10 +49,14 @@ html
                                     <form action="/check" method="POST" role="form">
                                       <div class="form-group">
                                           <input id="search-input" type="text" name="typeahead" class="navbar-search" placeholder="Search by Address" aria-describedby="sizing-addon1">
-                                          <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
-                
+                                          <button type="submit" class="transparent-button">
+                                            <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
+                                          </button>
+                                          <span class="glyphicon glyphicon-remove navbar-remove-glyph" aria-hidden="true"></span>  
                                       </div><!-- /form-group -->
                                     </form><!-- /input-group -->
+                                li.hidden-md.hidden-lg.nav-close.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search') Close
+                                     
  
     
     .body-content
