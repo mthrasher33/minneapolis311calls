@@ -39,7 +39,7 @@ router.get('/geojson', function (req, res){
 
             outlist.push(row)
           };
-          console.log(outlist)
+          //console.log(outlist)
           geo = geojson.parse(outlist, {Point: ['y', 'x']})
           res.send(geo)
       }

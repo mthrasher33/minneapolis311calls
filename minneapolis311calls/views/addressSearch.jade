@@ -5,7 +5,7 @@ extends layout
 block content
     div.container
         div.row.margin-bottom-10
-            div.col-md-5.property-summary
+            div.col-sm-7.property-summary
              div.panel.panel-default
               div.panel-heading Property Summary
               div.panel-body
@@ -36,12 +36,18 @@ block content
                  a(href="/landlordsearch/#{results[0][0].APP_NAME}") View All Properties
 
 
+            
+            div.col-sm-5.streetview
+              img.img-responsive.streetview_property(src= streetView_image)
+
+
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
             if (locals.results[0].length > 1)
               p There are more than one licenses for this property
 
             if (locals.results[1].length > 0)
-                div.col-md-7
+              
+                div.col-sm-12
                     //p Property Manager:
                     //    a#landlordName #{results[0].ContactName}
                     //p Manager since: #{moment(results[0].IssueDate).format('MM/DD/YYYY')}
@@ -59,11 +65,10 @@ block content
                             td #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}
                             //td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this format
             else
-                div.col-md-7
+                div.col-sm-12
                  div.text-align-center.property-summary.no-311-calls 
                   span.margin-right-10 No 311 Calls for this Property
                   i.fa.fa-hand-peace-o.kv-icon
-
 
         div.row
             div.col-md-12
@@ -82,4 +87,6 @@ block script
                   "bLengthChange": false,
                   "searching": false
                 });
+
+                //$('.streetview').css('background-image','url('+streetView_image+')');
             });

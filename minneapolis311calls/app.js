@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var nodemailer = require('nodemailer');
+var GoogleMapsAPI = require('googlemaps');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +16,9 @@ var landlordSearch = require('./routes/landlordSearch');
 var map = require('./routes/map');
 
 var app = express();
+
+
+
 
 //this is done so we can use moment in Jade templates
 app.locals.moment = require('moment');

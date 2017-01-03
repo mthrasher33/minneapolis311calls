@@ -51,8 +51,10 @@ body {
     text-align: center;
 }
 .no-311-calls{
-    height: 318px;
-    line-height: 318px;
+   /* height: 318px;
+    line-height: 318px;*/
+    height: 100px;
+    line-height: 100px;
     font-size: 30px;
 }
 .no-311-calls .kv-icon{
@@ -593,8 +595,25 @@ footer ul {
 
 }
 
+/*streetview stuff**/
 
+img.streetview_property {
+  max-height: 424px;
+  margin: 6px auto;
+      border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 1px 1px #f5f5f5;
+}
 
+div.streetview {
+  height: 316px;
+/*    margin-top: 8px;
+*/}
+
+/*div.leaflet-container {
+  margin-bottom: 100px;
+}
+*/
 /***CONTACT US***/
 input.contact, textarea.contact {
   width: 250px;
@@ -824,6 +843,10 @@ img.bio-image{
     float:right;
     /*width:100%;*/
 }
+
+img.streetview_property {
+    margin: 24px auto;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -832,6 +855,11 @@ img.bio-image{
 		margin-top: 25px;
 		font-size:20px;
 	}
+
+  img.streetview_property {
+    height: 300px;
+    margin: 15px auto;
+  }
 
 
 }
