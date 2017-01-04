@@ -44,6 +44,8 @@
     <Compile Include="routes\tryagain.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
+    <Content Include=".ebextensions\staticfiles.config" />
+    <Content Include=".ebextensions\nodecommand.config" />
     <Content Include="package.json" />
     <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
@@ -77,6 +79,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="data\" />
+    <Folder Include=".ebextensions\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
