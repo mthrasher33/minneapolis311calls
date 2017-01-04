@@ -1,5 +1,4 @@
 ﻿
-
 extends layout
 
 block content
@@ -37,10 +36,13 @@ block content
 
 
             
-            div.col-sm-5.streetview
-              img.img-responsive.streetview_property(src= streetView_image)
+            div.col-sm-5
+              div.streetview(style="background-image: url(#{streetView_image});")
+              //img.img-responsive.streetview_property(src= streetView_image)
 
 
+            
+        div.row  
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
             if (locals.results[0].length > 1)
               p There are more than one licenses for this property
