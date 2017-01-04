@@ -24,6 +24,35 @@ block content
         span Properties Owned: #{propertyCountForOwner} &nbsp;
          //a(href="#AllPropertiesMap") (View Map)
 
+    div.row
+      h4.landlord_properties Properties
+
+      each rrow, i in properties[0]
+        a(href= "/addressSearch/#{properties[0][i].Address}")
+          div.col-xs-6          
+            div.row.landlord_properties
+              div.col-xs-6
+                 div.landlord_streetview(style="background-image: url(#{properties[0][i].image_url});")
+              div.col-xs-6
+                p.property_address #{properties[0][i].Address}
+                
+                p
+                  i.glyphicon.glyphicon-home 
+                  span Neighborhood: #{properties[0][i].Neighborhood}
+
+
+                p
+                  //i.fa.fa-list-ol.kv-icon
+                  i.glyphicon.glyphicon-list
+                  span #{properties[0][i].Tier}
+                
+                p 
+                  i.glyphicon.glyphicon-calendar
+                  //i.fa.fa-hashtag.kv-icon
+                  span Managed Since: #{moment(properties[0][i].IssueDate).format('MM/DD/YYYY')}
+
+          //p Password: #{properties[0][i].image_url}
+
     div
     if (locals.calls311.length > 0)
 

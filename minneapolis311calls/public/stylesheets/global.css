@@ -630,6 +630,56 @@ div.streetview {
     border-width: 2px;
   }
 
+div.row.landlord_properties {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor:pointer;
+    opacity: .9;
+}
+
+div.row.landlord_properties:hover {
+  opacity: 1;
+  background-color: lightgoldenrodyellow;
+}
+
+h4.landlord_properties {
+      border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 10px;
+    color: gray;
+}
+div.landlord_streetview {
+  height: 300px;
+}
+
+p.property_address {
+      font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    /* margin-bottom: 12px; */
+    padding-bottom: 10px;
+    padding-top: -1px;
+    color: cornflowerblue;
+    bottom-border: 1px solid blue;
+    border-bottom: 1px solid cornflowerblue;
+    font-weight: bold;
+}
+
+i.glyphicon.glyphicon-home, i.glyphicon.glyphicon-calendar, i.glyphicon.glyphicon-list {
+      /* padding-right: 10px; */
+    background-color: #ddd;
+    border-radius: 100px 100px 100px 100px;
+    line-height: 15px;
+    font-size: 15px;
+    margin-right: 15px;
+    /* text-align: center; */
+    padding: 7px;
+    padding-left: center;
+    /* padding-left: 5px; */
+}
+
 /*div.leaflet-container {
   margin-bottom: 100px;
 }

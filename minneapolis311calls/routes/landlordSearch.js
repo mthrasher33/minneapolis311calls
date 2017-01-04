@@ -1,7 +1,15 @@
 ﻿var express = require('express');
 var router = express.Router();
 var datalayer = require('../data/datalayer.js');
-var geojson = require('geojson')
+var geojson = require('geojson');
+var GoogleMapsAPI = require('googlemaps');
+//google maps api
+var publicConfig = {
+    key: 'AIzaSyDayPCImvnZVbuobzkNwSFhDpolpHYm6Wo',
+    stagger_time: 1000,
+    encode_polylines: false,
+    secure: true
+};
 
 //Get Address Search Results, curently just searching by DB id for simplicity
 router.get('/:landlordName', function (req, res) {
@@ -51,12 +59,35 @@ router.get('/:landlordName', function (req, res) {
                         // change to latlngbounds for leaflet
                         var latlngbounds = [[bbox.miny, bbox.minx], [bbox.maxy, bbox.maxx]]
 
+                        
+                        // get a google street view image for each property owned
+                        // add that image to each property and ship it to the client
+                        //console.log("PROPERTIES: " + properties[0]);
+                        var gmAPI = new GoogleMapsAPI(publicConfig);
+
+                        properties[0].forEach(function(property){
+                           var lat = property.Y;
+                           var long = property.X;
+                           var params = {
+                             location: lat + ',' + long,
+                             size: '300x400'//,
+                             //heading: 108.4,
+                             //pitch: 7,
+                             //fov: 40
+                            };
+                            var streetView_image = gmAPI.streetView(params);
+  
+                            //assign to the object
+                            property.image_url = streetView_image;
+                       }); 
+
                         //Get the minimum data
                         //see here: http://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
                         var minDate = Math.max.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
                         var ownerSinceDate = new Date(minDate);
                         var geo = JSON.stringify(geo)
-                        res.render('landlordSearch', {bbox:JSON.stringify(latlngbounds), geo:geo, landlordName: req.params.landlordName, calls311: firstResult, propertyCountForOwner: propertyCountForOwner, ownerSinceDate: ownerSinceDate,  title: 'Landlord Search' });
+                        var properties_stringified = JSON.stringify(properties)
+                        res.render('landlordSearch', {bbox:JSON.stringify(latlngbounds), geo:geo, landlordName: req.params.landlordName, calls311: firstResult, propertyCountForOwner: propertyCountForOwner, ownerSinceDate: ownerSinceDate,  properties: properties, title: 'Landlord Search' });
                     }
                     else
                         console.log('Error while performing Query: ' + err);
