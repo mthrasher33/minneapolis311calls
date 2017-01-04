@@ -86,7 +86,7 @@ block script
                 //autocomplete the search box
                 $('#search-input').typeahead({
                     name: 'countries',
-                    remote: 'http://localhost:1337/search?key=%QUERY',
+                    remote: '/search?key=%QUERY',
                     limit: 10
                 });
             });
