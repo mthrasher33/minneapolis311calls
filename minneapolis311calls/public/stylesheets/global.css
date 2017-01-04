@@ -493,6 +493,9 @@ footer ul {
 
 }
 
+.homepage-search-bar-area .twitter-typeahead { /*width of input box*/
+	width: 50%;
+}
 
 
 .typeahead {
