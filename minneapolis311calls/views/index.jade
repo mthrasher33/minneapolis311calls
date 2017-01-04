@@ -74,25 +74,3 @@ block content
        
        div.arrow-down
 
-
-block script
-    script(type='text/javascript').
-        $(document).ready(function() {
-                //autocomplete the search box
-                $('#search-input').typeahead({
-                    name: 'countries',
-                    remote: '/search?key=%QUERY',
-                    limit: 10
-                });
-            });
-
-//-
-  ul
-    - for (var i = 0, len = results.length; i<len; i ++) {
-      li Address: #{results[i].Address}
-      li Manager: #{results[i].APP_NAME}
-      li _______________________________
-        
-      - }
-
-

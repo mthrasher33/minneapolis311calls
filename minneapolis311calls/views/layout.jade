@@ -47,13 +47,13 @@ html
                             ul.nav.navbar-nav
                                 li.navbar-search-li.
                                     <form action="/check" method="POST" role="form">
-                                      <div class="form-group">
-                                          <input id="search-input" type="text" name="typeahead" class="navbar-search" placeholder="Search by Address" aria-describedby="sizing-addon1">
-                                          <button type="submit" class="transparent-button">
-                                            <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
-                                          </button>
-                                          <span class="glyphicon glyphicon-remove navbar-remove-glyph" aria-hidden="true"></span>  
-                                      </div><!-- /form-group -->
+                                          <div class="navbar-search">
+                                              <input id="search-input" type="text" name="typeahead"  placeholder="Search by Address" aria-describedby="sizing-addon1">
+                                              <button type="submit" class="transparent-button">
+                                                <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
+                                              </button>
+                                              <span class="glyphicon glyphicon-remove navbar-remove-glyph" aria-hidden="true"></span>  
+                                          </div>
                                     </form><!-- /input-group -->
                                 li.hidden-md.hidden-lg.nav-close.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search') Close
                                      
@@ -61,8 +61,6 @@ html
     
     .body-content
         block content
- 
-
 
 include footer
     
@@ -74,6 +72,12 @@ include footer
     script(src="/javascripts/global.js")
     script(src="https://use.fontawesome.com/bca7d337a3.js")
 
-
-    block script
+    script(type='text/javascript').
+        $(document).ready(function() {
+                //autocomplete the search box
+                $ ('#search-input').typeahead({
+                    remote: '/search?key=%QUERY',
+                    limit: 10
+                });
+            });
            
