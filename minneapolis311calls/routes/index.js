@@ -51,7 +51,7 @@ router.post('/check', function (req, res) {
         //if there is an exact match, route there (1408 Monroe St. NE)
         //if there is one partial match, route there (1408 Monroe --> 1408 Monroe St. NE)
         else if (rows.length === 1) {
-            res.redirect('/addressSearch/' + rows[0].Address);
+            res.redirect('/addressSearch/' + encodeURIComponent(rows[0].Address));
         }
 
         //if no partial match, display a list of all possibilites (14 --> 1408 Monroe St. NE, 1424 Madison St. NE, etc.)

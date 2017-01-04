@@ -78,11 +78,6 @@ block content
 block script
     script(type='text/javascript').
         $(document).ready(function() {
-                $('#search').click(function(){
-                   var search = $('#search-input').val();
-                   window.location.href = '/addressSearch/'+search;
-                });
-                   
                 //autocomplete the search box
                 $('#search-input').typeahead({
                     name: 'countries',
