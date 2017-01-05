@@ -38,11 +38,11 @@ html
                         a(href='/about') About
                     li
                         a(href='/contact') Contact
-                    
+
                     li.hidden-md.hidden-lg.nav-close.menu.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.menu') Close
 
             if path !== "/"
-                .navbar-collapse.collapse.search                
+                .navbar-collapse.collapse.search
                         if path !== "/"
                             ul.nav.navbar-nav
                                 li.navbar-search-li.
@@ -52,18 +52,19 @@ html
                                               <button type="submit" class="transparent-button">
                                                 <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
                                               </button>
-                                              <span class="glyphicon glyphicon-remove navbar-remove-glyph" aria-hidden="true"></span>  
+                                              <span class="glyphicon glyphicon-remove navbar-remove-glyph" aria-hidden="true"></span>
                                           </div>
                                     </form><!-- /input-group -->
                                 li.hidden-md.hidden-lg.nav-close.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search') Close
-                                     
- 
-    
+
+
+
     .body-content
         block content
 
+
 include footer
-    
+
     script(src="/javascripts/jquery-3.1.0.min.js")
     script(src="/javascripts/bootstrap.min.js")
     script(src="/javascripts/typeahead.min.js")
@@ -80,4 +81,4 @@ include footer
                     limit: 10
                 });
             });
-           
+    block script
