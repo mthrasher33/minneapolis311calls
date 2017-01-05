@@ -30,14 +30,7 @@ block script
     var addr = $("#address span").text().trim()
     console.log(addr)
     console.log(addr)
-    function pointToLayer(geoj, latlng) {
-      console.log(latlng)
-      if (geoj["properties"]["link"] == addr) {
-        return L.circleMarker(latlng, homeMarker)
-      }
-      console.log('we made it here')
-      return L.circleMarker(latlng, notHomeMarker)
-    }
+
 
     var mymap = L.map('mapid').setView([#{results[0][0].Y}, #{results[0][0].X}], 17)
 
@@ -51,10 +44,26 @@ block script
         "North": bbox.getNorth()
       };
       $.getJSON("/map/geojson", bounds_obj, function( data ) {
+        var features = data["features"]
+        for (i in features) {
+          r = features[i]
+          if (r["properties"]["link"] == addr) {
+            var homesite = features.splice(i, 1)
+          }
+        }
         var geo = L.geoJson(data, {
           onEachFeature: onEachFeature,
-          pointToLayer:pointToLayer
+          pointToLayer: function (geoj, latlng) {
+            return L.circleMarker(latlng, notHomeMarker)
+          }
         })
         geo.addTo(mymap);
+
+        L.geoJson(homesite, {
+          onEachFeature: onEachFeature,
+          pointToLayer: function (geoj, latlng) {
+            return L.circleMarker(latlng, homeMarker)
+          }
+        }).addTo(mymap);
       });
     });
