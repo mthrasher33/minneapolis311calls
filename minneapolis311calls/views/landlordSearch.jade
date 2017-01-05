@@ -29,15 +29,15 @@ block content
 
       each rrow, i in properties[0]
         a(href= "/addressSearch/#{properties[0][i].Address}")
-          div.col-xs-6          
+          div.col-xs-6
             div.row.landlord_properties
               div.col-xs-6
                  div.landlord_streetview(style="background-image: url(#{properties[0][i].image_url});")
               div.col-xs-6
                 p.property_address #{properties[0][i].Address}
-                
+
                 p
-                  i.glyphicon.glyphicon-home 
+                  i.glyphicon.glyphicon-home
                   span Neighborhood: #{properties[0][i].Neighborhood}
 
 
@@ -45,8 +45,8 @@ block content
                   //i.fa.fa-list-ol.kv-icon
                   i.glyphicon.glyphicon-list
                   span #{properties[0][i].Tier}
-                
-                p 
+
+                p
                   i.glyphicon.glyphicon-calendar
                   //i.fa.fa-hashtag.kv-icon
                   span Managed Since: #{moment(properties[0][i].IssueDate).format('MM/DD/YYYY')}
@@ -71,7 +71,7 @@ block content
                 td #{calls311[i].TypeName}
                 td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
     else
-         div.text-align-center.property-summary.no-311-calls 
+         div.text-align-center.property-summary.no-311-calls
                   span.margin-right-10 No 311 Calls for this Landlord
                   i.fa.fa-hand-peace-o.kv-icon
 
@@ -93,9 +93,13 @@ block script
           }
         };
         var mymap = L.map('AllPropertiesMap')
-        if (#{propertyCountForOwner} > 1){
-          mymap.fitBounds(#{bbox});
+        mymap.setMaxZoom(17)
+        // if we have more than one point then we set the zoom to the bbox but out 10%
+        if (#{propertyCountForOwner > 1} ) {
+          mymap.fitBounds(L.latLngBounds(#{bbox}).pad(0.1));
+
         }
+        // if we have only one point we grab the first point from the bbox and set zoom to 17
         else{
           var bbox = #{bbox}
           mymap.setView(bbox[0], 17)}
