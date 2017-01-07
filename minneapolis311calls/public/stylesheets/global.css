@@ -299,7 +299,6 @@ li.navbar-search-li {
     margin-left:10px;
     margin-right:10px;
     border-radius: 5px 5px 5px 5px;
-    margin-top: 10px;
     padding-left: 40px;
     padding-right: 29px;
     font-size:16px;
@@ -320,7 +319,7 @@ span.glyphicon.glyphicon-search.tablet {
 .navbar-search-glyph {
     position: absolute;
     left: 5%;
-    top: 19px;
+    top: 8px;
     font-size:16px;
     cursor:pointer;
     color:black;
@@ -353,14 +352,6 @@ button.transparent-button {
     outline: none;
 }
 
-.navbar-remove-glyph {
-    position: absolute;
-    top: 19px;
-    right: 9%;
-    font-size: 16px;
-    display:none;
-    cursor:pointer;
-}
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -479,24 +470,25 @@ footer ul {
 
 .typeahead, .tt-query, .tt-hint {
 	border: 2px solid #CCCCCC;
-/*	border-radius: 8px;
-*/	font-size: 14px;
-	height: 35px;
-	line-height: 35px;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
 	color:black;
 	width: 100%;
-	font-family: "Montserrat";
+	font-family: "Arial";
 	color: #6A6B6A;
 	vertical-align: middle;
-
 }
 
 .homepage-search-bar-area .twitter-typeahead { /*width of input box*/
 	width: 50%;
 }
 
+.navbar-search .twitter-typeahead { /*width of input box*/
+	width: 90%;
+}
 
 .typeahead {
 	background-color: #FFFFFF;
@@ -518,6 +510,10 @@ footer ul {
 	margin-top: 12px;
 	padding: 8px 0;
 	width: 422px;
+    /*These are specific to the nav-bar in small viewport */
+    position: fixed !important;
+    top: 90px !important;;
+    left: 10% !important;;
 }
 
 .navbar-search .tt-dropdown-menu {
@@ -898,11 +894,26 @@ img.bio-image{
     .navbar-search {
         width:300px;
         height: 30px;
+        margin-top: 10px;
         margin-left: 0px;
-        margin-right:0px;
-        padding-left:45px;
+        margin-right: 0px;
+        padding-left: 45px;
     }
 
+    .navbar-search .tt-dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;;
+        left: 0px !important;;
+    }
+
+    .navbar-search-glyph {
+        position: absolute;
+        left: 5%;
+        top: 19px;
+        font-size:16px;
+        cursor:pointer;
+        color:black;
+    }
 
 
  .navbar-collapse.collapse.menu {
