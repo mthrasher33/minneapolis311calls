@@ -900,7 +900,7 @@ img.bio-image{
         padding-left: 45px;
     }
 
-    .navbar-search .tt-dropdown-menu {
+    .tt-dropdown-menu {
         position: absolute !important;
         top: 100% !important;;
         left: 0px !important;;
