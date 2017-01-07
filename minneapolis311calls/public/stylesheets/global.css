@@ -382,7 +382,7 @@ button.transparent-button {
 
 /**INDEX PAGE**/
 	.minneapolisLandscape {
-		background-image: url('/images/minneapolis.jpg');
+		background-image: url('/images/mpls_skyline_saint_anthony_falls.jpg');
 		height: 1200px;
         background-size: cover;
         margin-top: -10px;
@@ -598,8 +598,8 @@ footer ul {
 /****STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
 
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   position: absolute;
@@ -719,7 +719,7 @@ div.learnMore {
 	height: 500px;
 	position: relative;
 }
-	
+
 	div.learnMore div.col-xs-12.container {
 		    /* width: 100%; */
     width: 50%;
@@ -727,12 +727,12 @@ div.learnMore {
     border: 10px #A17F67 solid;
     margin-top: 4%;
     padding: 30px 30px 30px 30px;
-	
+
 	}
 
 	div.learnMore div.col-xs-12 p#finding {
     text-align: center;
-    
+
     text-transform: titlecase;
     text-transform: uppercase;
     font-weight: 700;
@@ -753,7 +753,7 @@ div.learnMore {
 		  top: 500px;
   left: 50%;
     border-top: 20px solid #F16D6B;
-    z-index: 1;		
+    z-index: 1;
 	}
 
 	div.learnMore.red div.col-xs-12 p#finding {
@@ -781,7 +781,7 @@ div.learnMore.yellow {
 		  top: 500px;
   left: 50%;
     border-top: 20px solid #E3DF92;
-    z-index: 1;		
+    z-index: 1;
 	}
 
 div.learnMore.yellow div.col-xs-4 {
@@ -834,7 +834,7 @@ p#quote {
 div.learnMore.red-light div.col-xs-7 p#quote{
 	color: #E3DF40;
 	text-shadow: 1px 1px 1px black;
-  
+
 }
 
 div.learnMore.purple-light {
