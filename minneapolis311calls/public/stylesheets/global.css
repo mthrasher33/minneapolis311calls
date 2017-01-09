@@ -470,9 +470,9 @@ footer ul {
 
 .typeahead, .tt-query, .tt-hint {
 	border: 2px solid #CCCCCC;
-	font-size: 14px;
-	height: 30px;
-	line-height: 30px;
+	font-size: 16px;
+	height: 35px;
+	line-height: 35px;
 	outline: medium none;
 	padding: 8px 12px;
 	color:black;
@@ -509,19 +509,19 @@ footer ul {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	margin-top: 12px;
 	padding: 8px 0;
-	width: 422px;
-    /*These are specific to the nav-bar in small viewport */
-    position: fixed !important;
-    top: 90px !important;;
-    left: 10% !important;;
+	width: 350px;
 }
 
 .navbar-search .tt-dropdown-menu {
 	width: 300px;
+    /*These are specific to the nav-bar in small viewport */
+    position: fixed !important;
+    top: 90px !important;
+    left: 10% !important;
 }
 
 .tt-suggestion {
-	font-size: 24px;
+	font-size: 16px;
 	line-height: 24px;
 	padding: 3px 20px;
     color: #496B46;
@@ -541,14 +541,6 @@ footer ul {
 }
 
 #search {
-    /* margin-left: 30px; */
-/*    line-height: 25px;
-*/
-    /* position: absolute; */
-    /* top: -37px; */
-    /* left: 900px; */
-    /* right: 4%; */
-    /* top: 42%; */
     border-radius: 0px 0px 0px 0px;
     vertical-align: bottom;
 }
@@ -887,7 +879,7 @@ img.bio-image{
 		padding-top: 10px;
 	}
 
-	.typeahead, .tt-query, .tt-hint {
+	.typeahead, .tt-query, .tt-hint, .tt-suggestion {
 		font-size: 22px;
 	}
 
@@ -900,12 +892,6 @@ img.bio-image{
         padding-left: 45px;
     }
 
-    .tt-dropdown-menu {
-        position: absolute !important;
-        top: 100% !important;;
-        left: 0px !important;;
-    }
-
     .navbar-search-glyph {
         position: absolute;
         left: 5%;
@@ -915,6 +901,11 @@ img.bio-image{
         color:black;
     }
 
+    .navbar-search .tt-dropdown-menu{
+        position: absolute !important;
+        top: 100% !important;
+        left: 0px !important;
+    }
 
  .navbar-collapse.collapse.menu {
     float:left;
