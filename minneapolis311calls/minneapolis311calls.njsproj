@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="config.js" />
     <Compile Include="data\datalayer.js" />
     <Compile Include="public\javascripts\bootstrap.min.js" />
     <Compile Include="public\javascripts\jquery-3.1.0.min.js" />

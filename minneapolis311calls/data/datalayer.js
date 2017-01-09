@@ -1,15 +1,8 @@
 ﻿var DataLayer = function () {
     var mysql = require("mysql");
-    var creds = //require("./_config.js");
-        {
-            host: 'bowie2.c44css47zkdo.us-west-2.rds.amazonaws.com',
-            user: 'master',
-            password: 'fri$nDgramming',
-            database: 'address_data',
-            connectionLimit: 10
-        };
 
-    var pool = mysql.createPool(creds);
+    var config = require('../config')['production'];
+    var pool = mysql.createPool(config.database);
 
 
     this.getTopRentalLicenses = function(callback) {
