@@ -3,8 +3,8 @@ extends layout
 
 block content
     div.container
-        div.row.margin-bottom-10
-            div.col-sm-7.property-summary
+        div.row
+            div.col-sm-6.property-summary
              div.panel.panel-default
               div.panel-heading Property Summary
               div.panel-body
@@ -36,13 +36,13 @@ block content
 
 
             
-            div.col-sm-5
+            div.col-sm-6
               div.streetview(style="background-image: url(#{streetView_image});")
               //img.img-responsive.streetview_property(src= streetView_image)
 
 
             
-        div.row  
+        div.row.margin-bottom-20
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
             if (locals.results[0].length > 1)
               p There are more than one licenses for this property
