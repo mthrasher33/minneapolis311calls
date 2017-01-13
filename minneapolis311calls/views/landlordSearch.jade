@@ -6,7 +6,7 @@ block extraHeader
 
 block content
    div.container
-    div.row
+    div.row.margin-bottom-10
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
@@ -15,14 +15,42 @@ block content
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
-        i.kv-icon.fa.fa-briefcase
+        i.kv-icon.fa.fa-calendar-o
         span Owner Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
-        i.kv-icon.fa.fa-briefcase
+        i.kv-icon.fa.fa-hashtag
         span Properties Owned: #{propertyCountForOwner} &nbsp;
-         //a(href="#AllPropertiesMap") (View Map)
+            a(href="#PropertiesOwnedHeader") (View Map)
+
+    div.row.margin-bottom-20
+     div.col-md-12
+        if (locals.calls311.length > 0)
+            table.table.table-striped#results
+              thead
+                tr
+                  th #
+                  th Address
+                  th Type
+                  th Date of Incident
+              tbody
+                each rrow, i in calls311
+                  tr
+                    td #{i+1}
+                    td#address #{calls311[i].Address}
+                    td #{calls311[i].TypeName}
+                    td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
+        else
+             div.text-align-center.property-summary.no-311-calls
+                span.margin-right-10 No 311 Calls for this Landlord
+                i.fa.fa-hand-peace-o.kv-icon
+
+    div.row.margin-bottom-20
+        div.col-md-12
+            div.panel.panel-default
+                div.panel-heading.text-align-center#PropertiesOwnedHeader Properties Owned
+                div#AllPropertiesMap
 
     div.row
       h4.landlord_properties Properties
@@ -50,36 +78,6 @@ block content
                   i.glyphicon.glyphicon-calendar
                   //i.fa.fa-hashtag.kv-icon
                   span Managed Since: #{moment(properties[0][i].IssueDate).format('MM/DD/YYYY')}
-
-          //p Password: #{properties[0][i].image_url}
-
-    div
-    if (locals.calls311.length > 0)
-
-        table.table.table-striped#results
-          thead
-            tr
-              th #
-              th Address
-              th Type
-              th Date of Incident
-          tbody
-            each rrow, i in calls311
-              tr
-                td #{i+1}
-                td#address #{calls311[i].Address}
-                td #{calls311[i].TypeName}
-                td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
-    else
-         div.text-align-center.property-summary.no-311-calls
-                  span.margin-right-10 No 311 Calls for this Landlord
-                  i.fa.fa-hand-peace-o.kv-icon
-
-    div.row
-        div.col-md-12
-            div.panel.panel-default
-            div.panel-heading.text-align-center Properties Owned
-            div#AllPropertiesMap
 
 block script
     script(src="/javascripts/leaflet.js")
