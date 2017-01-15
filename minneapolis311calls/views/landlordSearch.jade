@@ -38,7 +38,8 @@ block content
                 each rrow, i in calls311
                   tr
                     td #{i+1}
-                    td#address #{calls311[i].Address}
+                    td
+                        a(href= "/addressSearch/#{calls311[i].Address}") #{calls311[i].Address}
                     td #{calls311[i].TypeName}
                     td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
         else
@@ -67,7 +68,6 @@ block content
                 p
                   i.glyphicon.glyphicon-home
                   span Neighborhood: #{properties[0][i].Neighborhood}
-
 
                 p
                   //i.fa.fa-list-ol.kv-icon

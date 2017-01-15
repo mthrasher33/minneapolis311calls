@@ -34,6 +34,7 @@
     <Compile Include="config.js" />
     <Compile Include="data\datalayer.js" />
     <Compile Include="public\javascripts\bootstrap.min.js" />
+    <Compile Include="public\javascripts\global.js" />
     <Compile Include="public\javascripts\jquery-3.1.0.min.js" />
     <Compile Include="public\javascripts\leaflet.js" />
     <Compile Include="public\javascripts\typeahead.js" />

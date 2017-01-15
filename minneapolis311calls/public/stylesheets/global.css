@@ -41,6 +41,12 @@ body {
     margin-left: 46px;
     margin-top: -15px;
 }
+
+#AllPropertiesMap {
+	width: 100%;
+	height: 400px
+}
+
 .margin-bottom-10{
     margin-bottom: 10px;
 }

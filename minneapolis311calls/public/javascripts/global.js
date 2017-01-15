@@ -1,10 +1,4 @@
 $(document).ready(function() {
-                $('td#address').click(function(){
-                   //alert("clicked");
-                   var address = $(this).text();
-                   //alert(address);
-                   window.location.href = '/addressSearch/'+address;
-    });
 
     $('button.menu').click(function () {
         //add the special close menu button
