@@ -361,6 +361,13 @@ button.transparent-button {
     outline: none;
 }
 
+div.about-cog{
+    font-size: 140px;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -715,8 +722,12 @@ img.bio-image{
     border-radius: 50%;
 }
 
-.bottom-buffer{
+.bottom-buffer-20{
     margin-bottom: 20px;
+}
+
+.bottom-buffer-40{
+    margin-bottom: 40px;
 }
 
 /***END INDEX PAGE LEARN MORE ROW***/

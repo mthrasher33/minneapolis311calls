@@ -2,26 +2,59 @@
 
 block content
    div.container
-    div.row.bottom-buffer
-        div.col-md-12
+    div.row.bottom-buffer-40
+        div.col-md-6
+         h1 What is Pork Belly?
          div Pork Belly leverages 
           a(href= 'http://opendata.minneapolismn.gov/') Minneapolis Open Data
-          |  to help renters in their housing search as well as give visiblity to landlord's properties and incident history
-    div.row.bottom-buffer
+          |  to help renters in their housing search as well as give visiblity to landlord's properties and incident history.
+          |  At your fingertips is the ability to search for addresses to view 311 activity, view all properties owned, and get a complete
+          |  picture of the 311 history of properties.
+        div.col-md-6
+            div.fa.fa-cogs.about-cog
+            //img(src="https://www.delaget.com/wp-content/uploads/2016/12/FlexibleDataBackbone.png")
+    br
+    br
+    div.row.bottom-buffer-20
+        div.col-md-6
+            div PSA by the city of Minneapolis further explains the purpose of 311
+                div.
+                 <iframe width="400" height="300" src="https://www.youtube.com/embed/D_HnRuBxTKM" frameborder="0" allowfullscreen></iframe>
+        div.col-md-6
+            h1(style="margin-top: 0px;") What is a 311 Call?
+            div 311 is a service provided by Minneapolis in which renters can inform the city of issues with the residence they are renting.  If a renter has already alerted the landlord to an issue, but it is not being resolved, 311 may be able to help resolve the issue.   There are several categories which these types of complaints fall into, but a few examples are:
+            br
+            ul
+                li Animal Complaint
+                li Abandoned Vehicle Reports
+                li Graffiti Report
+                li Housing Code Violations
+                li Noise Complaints
+                li Residential Conditions Complaint
+                li Sidewalk Snow and Ice
+                li Street Light Out
+            span For more information about 311 in Minneapolis please visit the official government page: 
+             a(href= 'http://www.ci.minneapolis.mn.us/311/index.htm') http://www.ci.minneapolis.mn.us/311/index.htm
+    br
+    div.row
+        div.col-md-12
+            h2 Creators
+            hr
+    div.row.bottom-buffer-20
         div.col-md-2.col-sm-3.col-xs-4
             img.bio-image.img-responsive.center-block(src= "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAhwAAAAJDQ4ZGM0ZWNlLWE2NTQtNDA2OS1iMjMwLTEzMTM2MGIyN2E5MA.jpg")
         div.col-md-10.col-sm-9.col-xs-8
             h3 Matt - Software Developer 
             p Not only a software developer, but dabbles in rental properties.
             p Years of Lanlord experience: 2 years
-    div.row.bottom-buffer  
+    div.row.bottom-buffer-20
          div.col-md-2.col-sm-3.col-xs-4
             img.bio-image.img-responsive.center-block(src= "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlpAAAAJDg3ODk2ZDc4LTg2MzAtNGVkYS04ZTk0LTEyNDdjODFjZjMzZQ.jpg")
          div.col-md-10.col-sm-9.col-xs-8
             h3 Mike - Software Developer 
             p GIS specialist, no surprise he handles the geospatial data and map creation.
             p Years of renter experience: 4 years
-     div.row.bottom-buffer
+     div.row.bottom-buffer-20
          div.col-md-2.col-sm-3.col-xs-4
             img.bio-image.img-responsive.center-block(src= "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAlwAAAAJGZhNTI3NWVmLTUzMWMtNGZjMC05OTg0LWQ4OWYzNjJjMDRjNQ.jpg")
          div.col-md-10.col-sm-9.col-xs-8
