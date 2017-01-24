@@ -498,6 +498,14 @@ footer ul {
 	vertical-align: middle;
 }
 
+/*Typeahead adds styling to the input you put it on, including making that element background-color: transparent.
+    Browsers treat this setup differently.  This is needed because Safari gets the background color of the parent element
+    so we get a light green color.  Making this white is probably more correct anyways
+*/
+.twitter-typeahead {
+	background-color: white;
+}
+
 .homepage-search-bar-area .twitter-typeahead { /*width of input box*/
 	width: 50%;
 }
