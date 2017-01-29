@@ -62,8 +62,8 @@ body {
 .no-311-calls{
    /* height: 318px;
     line-height: 318px;*/
-    height: 100px;
-    line-height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 30px;
 }
 .no-311-calls .kv-icon{
