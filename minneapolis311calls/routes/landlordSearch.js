@@ -20,7 +20,7 @@ router.get('/:landlordName', function (req, res) {
                 var propertyCountForOwner = null;
                 datalayer.PropertiesOwnedByLandlord(req.params.landlordName, function (err, properties, fields) {
                     if (!err) {
-                        var firstResult = rows[0];
+                        var resultSetof311Calls = rows[0];
                         propertyCountForOwner = properties[0].length;
 
                         var outlist = []
@@ -90,7 +90,7 @@ router.get('/:landlordName', function (req, res) {
                           bbox:JSON.stringify(latlngbounds),
                           geo: JSON.stringify(geo),
                           landlordName: req.params.landlordName,
-                          calls311: firstResult,
+                          calls311: resultSetof311Calls,
                           propertyCountForOwner: propertyCountForOwner,
                           ownerSinceDate: ownerSinceDate,
                           properties: properties,
