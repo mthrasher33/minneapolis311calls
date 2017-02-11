@@ -58,30 +58,30 @@ block content
                 div#AllPropertiesMap
 
     div.row
-      h4.landlord_properties Properties
-
+      div.col-xs-12
+        h4.landlord_properties Properties
+    div.row
       each rrow, i in properties[0]
         a(href= "/addressSearch/#{properties[0][i].Address}")
-          div.col-xs-6
-            div.row.landlord_properties
-              div.col-xs-6
-                 div.landlord_streetview(style="background-image: url(#{properties[0][i].image_url});")
-              div.col-xs-6
+          div.col-xs-12.col-md-6
+            div.landlord_properties
+             div.row
+              div.col-xs-12.col-md-6
                 p.property_address #{properties[0][i].Address}
+                div
+                    p
+                      i.fa.fa-home.kv-icon
+                      span Neighborhood: #{properties[0][i].Neighborhood}
 
-                p
-                  i.glyphicon.glyphicon-home
-                  span Neighborhood: #{properties[0][i].Neighborhood}
+                    p
+                      i.fa.fa-list-ol.kv-icon
+                      span #{properties[0][i].Tier}
 
-                p
-                  //i.fa.fa-list-ol.kv-icon
-                  i.glyphicon.glyphicon-list
-                  span #{properties[0][i].Tier}
-
-                p
-                  i.glyphicon.glyphicon-calendar
-                  //i.fa.fa-hashtag.kv-icon
-                  span Managed Since: #{moment(properties[0][i].IssueDate).format('MM/DD/YYYY')}
+                    p
+                      i.fa.fa-calendar-o.kv-icon
+                      span Managed Since: #{moment(properties[0][i].IssueDate).format('MM/DD/YYYY')}
+              div.col-xs-12.col-md-6
+                 div.landlord_streetview(style="background-repeat: no-repeat; background-position-x: center; background-image: url(#{properties[0][i].image_url});")
 
 block script
     script(src="/javascripts/leaflet.js")
