@@ -35,7 +35,7 @@ router.get('/geojson', function (req, res){
             row["link"] = address
             row['pop_up_text'] = '<p><a href=../addressSearch/{address_encoded}>{address}</a></p>'.format({ address: address, address_encoded: address_encoded })
             if (owner.toLowerCase() !== landlord.toLowerCase()) {
-              row['pop_up_text'] += '<p>Owning Corp: <a href=../landlordSearch/{owner_encoded}>{owner}</a></p>'.format({ owner: owner, owner_encoded: owner_encoded})
+              row['pop_up_text'] += '<p>Owner: <a href=../landlordSearch/{owner_encoded}>{owner}</a></p>'.format({ owner: owner, owner_encoded: owner_encoded})
             }
             row['pop_up_text'] += '<p>Landlord: <a href=../landlordSearch/{landlord_encoded}>{landlord}</a></p>'.format({ landlord: landlord, landlord_encoded: landlord_encoded })
 
