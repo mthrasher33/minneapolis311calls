@@ -1,5 +1,31 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Leckerli%20One);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face {
+    font-family: 'bariolregular';
+    src: url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.eot');
+    src: url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.woff2') format('woff2'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.woff') format('woff'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.ttf') format('truetype'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.svg#bariolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'bariolitalic';
+    src: url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.eot');
+    src: url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.woff2') format('woff2'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.woff') format('woff'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.ttf') format('truetype'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.svg#bariolitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 ul {
     list-style: none;
@@ -11,6 +37,7 @@ body {
     padding-right: 0px;
     padding-bottom: 0px;
     padding-top: 60px;
+    font-family:'bariolregular';
 
 }
 
@@ -212,26 +239,46 @@ padding-top: 60px;*/
 }*/
 /*Purple Colors: http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0*/
 .navbar-default {
-  background-color: #390267;
-  border-color: #390267;
+/*  background-color: #390267;
+*/  
+    background-color: #434B54 ;
+    border-color: #390267;
 }
-.navbar-default .navbar-brand {
-  color: #ffffff;
+.navbar-default .navbar-brand img {
+/*  color: #ffffff;
+*/
+/*  background-image:url('/logos/SVG/Rental Researcher Logo-Horizontal-Color.svg');
+  background-repeat: no-repeat;*/
+  position: relative;
+    height: 245%;
+    width: auto;
+    top: -15px;
+}
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #8a11d0;
-}
+/*  color: #8a11d0;
+*/
+/*    opacity: .9;
+*/}
+
+
 .navbar-default .navbar-text {
-  color: #ffffff;
+/*  color: #ffffff;
+*/
+    color: #77C043;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+/*  color: #ffffff;
+*/
+    color: #77C043;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #8a11d0;
-}
+/*  color: #8a11d0;
+*/
+/*    opacity: .9;
+*/  }
 .navbar-default .navbar-nav > li > .dropdown-menu {
   background-color: #390267;
 }
@@ -282,7 +329,7 @@ padding-top: 60px;*/
   color: #ffffff;
 }
 .navbar-default .navbar-link:hover {
-  color: #8a11d0;
+ /* color: #8a11d0;*/
 }
 
 .navbar-collapse.collapse.menu {
@@ -396,7 +443,7 @@ div.about-cog{
 	}
 	.searchBox {
 		width: 90%;
-		height: 300px;
+		height: 200px;
 		color:white;
 		margin: 10px auto;
     position: absolute;
@@ -406,8 +453,10 @@ div.about-cog{
 
 	.block {
 		border-radius: 10px 10px 10px 10px;
-		background: #496B46;
-  		filter: alpha(opacity=60);
+/*		background: #496B46;
+*/  		
+    background-color:#00B04C;
+      filter: alpha(opacity=60);
   		/* IE */
         -moz-opacity: 0.6;
   		/* Mozilla */
@@ -432,21 +481,29 @@ div.about-cog{
 
 	/**SEARCH BOX**/
 	.searchBoxText .title {
-		font-family:  "Leckerli One";
-		font-size: 40px ;
-		opacity: 1;
-		text-align: center;
-		color:  #B5B8B5;
+/*		font-family:  "Leckerli One";
+*/		opacity: 1;
+/*		color:  #B5B8B5;
+*/
+    background-image: url('/logos/SVG/Rental Researcher Logo-Horizontal-White.svg');
+
+    margin-top: 10px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 45% 0;
 	}
 
 	.searchBoxText .subTitle {
 		font-size:15px;
-		text-transform: uppercase;
-		font-family: "Montserrat";
-		opacity: 1;
+/*		text-transform: uppercase;
+*//*		font-family: "Montserrat";
+*/		opacity: 1;
 		text-align: center;
-		color: #AAEEA4;
-		margin-top:10px;
+/*		color: #AAEEA4;
+*/		
+    color: white;
+    margin-top:10px;
 	}
 
 	/**END SEARCH BOX**/
@@ -493,8 +550,8 @@ footer ul {
 	padding: 8px 12px;
 	color:black;
 	width: 100%;
-	font-family: "Arial";
-	color: #6A6B6A;
+/*	font-family: "Arial";
+*/	color: #6A6B6A;
 	vertical-align: middle;
 }
 
@@ -587,8 +644,9 @@ footer ul {
 /*Stats on the last row of the search box*/
 .row.third {
 	margin-top: 45px;
-	font-family: "Montserrat";
-	font-size:14px;
+/*	font-family: "Montserrat";
+*/	font-size:10px;
+color: #434B54;
 
 }
 
@@ -600,8 +658,8 @@ footer ul {
 }
 
 .row.third .col-xs-4:hover {
-	color: #AAEEA4;
-	border-top-color: #AAEEA4;
+/*	color: #AAEEA4;
+	border-top-color: #AAEEA4;*/
 }
 
 /****END STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
@@ -738,9 +796,49 @@ img.bio-image{
     margin-bottom: 40px;
 }
 
+/*p.divider {
+    height: 50%;
+     margin-top: 10px; 
+    border-right: 1px solid #434B54;
+}*/
+
 /***END INDEX PAGE LEARN MORE ROW***/
 
+@media(min-width: 320px){
+    .searchBoxText .subTitle {
+      font-size:18px;
+    }
+    .searchBoxText .title {
+      height: 60px;
+    }
 
+}
+
+@media(min-width: 480px){
+    .searchBoxText .subTitle {
+      margin-top: -3px;
+    font-size: 20px;
+    }
+    .searchBoxText .title {
+      margin-top:5px;
+      height:70px;
+    }
+}
+
+@media(min-width: 640px){
+    .searchBoxText .subTitle {
+      margin-top: -3px;
+    font-size: 22px;
+    }
+    .searchBoxText .title {
+      margin-top:5px;
+      height:75px;
+    }
+
+    .row.second {
+      margin-top:10px;
+    }
+}
 
 
 /***MEDIA QUERIES***/
@@ -749,14 +847,21 @@ img.bio-image{
 	.searchBox {
 		width: 60%;
 		left: 19%;
+        height: 440px;
+
 	}
 
 	.searchBox .title {
-		font-size: 50px;
+/*		font-size: 50px;
+*/    height: 90px;
 	}
 
 	.searchBox .subTitle {
-		font-size: 20px;
+    font-size: 40px;
+    letter-spacing: 1.0px;
+        margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 	}
 
 	.row.second {
@@ -811,8 +916,16 @@ img.bio-image{
     /*width:100%;*/
 }
 
+
+
 img.streetview_property {
     margin: 24px auto;
+  }
+}
+
+@media(min-width: 934px){
+  .searchBox {
+    height: 400px;
   }
 }
 
@@ -828,6 +941,10 @@ img.streetview_property {
     margin: 15px auto;
   }
 
+  .searchBox {
+    height: 400px;
+  }
+
 
 }
 
@@ -835,7 +952,13 @@ img.streetview_property {
 @media (min-width: 1200px) {
 	.row.third {
 		margin-top: 40px;
-		font-size: 24px;
+		font-size: 23px;
 	}
 
+}
+
+@media(min-width: 1520px){
+  .searchBox {
+    height: 335px;
+  }
 }
