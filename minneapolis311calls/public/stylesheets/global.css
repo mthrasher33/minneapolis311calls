@@ -262,7 +262,10 @@ padding-top: 60px;*/
 /*    opacity: .9;
 */}
 
-
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: #77C043;
+  opacity: .8;
+}
 .navbar-default .navbar-text {
 /*  color: #ffffff;
 */
@@ -653,8 +656,8 @@ color: #434B54;
 .row.third .col-xs-4 {
 	border-top: 1px solid white;
 	padding-top:10px;
-	cursor:pointer;
-	height:100%;
+/*	cursor:pointer;
+*/	height:100%;
 }
 
 .row.third .col-xs-4:hover {
