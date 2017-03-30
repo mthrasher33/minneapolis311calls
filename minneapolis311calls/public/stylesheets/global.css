@@ -776,9 +776,12 @@ i.glyphicon.glyphicon-home, i.glyphicon.glyphicon-calendar, i.glyphicon.glyphico
 }
 */
 /***CONTACT US***/
+h1.contact-us{
+    margin-top: 0px;
+}
+
 input.contact, textarea.contact {
   width: 100%;
-  margin-top: 10px;
 }
 
 textarea.contact {
