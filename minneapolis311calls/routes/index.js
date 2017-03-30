@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 
     datalayer.getTopRentalLicenses(function (err, rows, fields) {
         if (!err) {
-            res.render('index', { results: rows, title: 'Pork Belly', path: req.path });
+            res.render('index', { results: rows, title: 'Rental Researcher', path: req.path });
             console.log(req.path);
         }
         else

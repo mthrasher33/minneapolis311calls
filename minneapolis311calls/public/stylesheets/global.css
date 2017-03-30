@@ -1,16 +1,43 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Leckerli%20One);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face {
+    font-family: 'bariolregular';
+    src: url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.eot');
+    src: url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.woff2') format('woff2'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.woff') format('woff'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.ttf') format('truetype'),
+         url('/fonts/Webfont/Bariol-Regular-Webfont/bariol_regular-webfont.svg#bariolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'bariolitalic';
+    src: url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.eot');
+    src: url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.woff2') format('woff2'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.woff') format('woff'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.ttf') format('truetype'),
+         url('/fonts/Webfont/Bariol-Regular-Italic-Webfont/bariol_regular_italic-webfont.svg#bariolitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 ul {
     list-style: none;
 }
 
 body {
-	/*Overwrite native body padding for jade*/
+  /*Overwrite native body padding for jade*/
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
     padding-top: 60px;
+    font-family:'bariolregular';
 
 }
 
@@ -43,8 +70,8 @@ body {
 }
 
 #AllPropertiesMap {
-	width: 100%;
-	height: 400px
+  width: 100%;
+  height: 400px
 }
 
 .margin-bottom-10{
@@ -88,8 +115,8 @@ body {
 }
 
 .body-content {
-	/*weird stuff to overwrite native padding*/
-/*	margin-left: -50px;
+  /*weird stuff to overwrite native padding*/
+/*  margin-left: -50px;
     margin-right: -50px;
     margin-top: -9px;
 padding-top: 60px;*/
@@ -104,17 +131,17 @@ padding-top: 60px;*/
       }
 /**CLUSTE STYL**/
 #cluster {
-	width: 1080px;
-	height: 500px;
-	background-color:yellow;
+  width: 1080px;
+  height: 500px;
+  background-color:yellow;
 }
 /***MATT'S DEMO STYLE**/
 :root {
-	--lightgray : #E8EBE8;
-	--mediumgray : #B5B8B5;
-	--darkgray : #6A6B6A;
-	--lightgreen : #AAEEA4;
-	--darkgreen: #496B46;
+  --lightgray : #E8EBE8;
+  --mediumgray : #B5B8B5;
+  --darkgray : #6A6B6A;
+  --lightgreen : #AAEEA4;
+  --darkgreen: #496B46;
 
 }
 
@@ -212,28 +239,57 @@ padding-top: 60px;*/
 }*/
 /*Purple Colors: http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0*/
 .navbar-default {
-  background-color: #390267;
-  border-color: #390267;
+/*  background-color: white;
+*/  
+    background-color: #434B54 ;
+    border-color: white;
 }
-.navbar-default .navbar-brand {
-  color: #ffffff;
+.navbar-default .navbar-brand img {
+/*  color: #ffffff;
+*/
+/*  background-image:url('/logos/SVG/Rental Researcher Logo-Horizontal-Color.svg');
+  background-repeat: no-repeat;*/
+       height: 90%;
+    margin-top: 3px;
+    position: absolute;
+    left: 10px;
+    max-height: 45px;
+/*    width: auto;
+    top: -11px;*/
+}
+.navbar-brand {
+  padding: 0px;
+}
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #8a11d0;
+/*  color: #8a11d0;
+*/
+/*    opacity: .9;
+*/}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: #77C043;
+  opacity: .8;
 }
 .navbar-default .navbar-text {
-  color: #ffffff;
+/*  color: #ffffff;
+*/
+    color: #77C043;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+/*  color: #ffffff;
+*/
+    color: #77C043;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #8a11d0;
-}
+/*  color: #8a11d0;
+*/
+/*    opacity: .9;
+*/  }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffffff;
@@ -241,36 +297,40 @@ padding-top: 60px;*/
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #8a11d0;
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
   color: #8a11d0;
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #8a11d0;
-  background-color: #390267;
-}
+/*  background-color: white;
+*/
+  opacity: .9;}
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #8a11d0;
-  background-color: #390267;
+/*  color: #8a11d0;
+*//*  background-color: white;
+*/opacity: .9;
 }
 .navbar-default .navbar-toggle {
-  border-color: #390267;
+  border-color: white;
+  max-height: 34px;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #390267;
-}
+/*  background-color: white;
+*/
+  opacity: .9;}
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
 }
@@ -282,7 +342,7 @@ padding-top: 60px;*/
   color: #ffffff;
 }
 .navbar-default .navbar-link:hover {
-  color: #8a11d0;
+ /* color: #8a11d0;*/
 }
 
 .navbar-collapse.collapse.menu {
@@ -301,7 +361,7 @@ li.navbar-search-li {
 }
 .navbar-search {
     border: none;
-    line-height: 27px;
+    line-height: 0px;
     padding-left:15px;
     background-color: white;
     width: 95%;
@@ -327,7 +387,7 @@ span.glyphicon.glyphicon-search.tablet {
 
 .navbar-search-glyph {
     position: absolute;
-    left: 5%;
+    left: 20px;
     top: 8px;
     font-size:16px;
     cursor:pointer;
@@ -335,8 +395,10 @@ span.glyphicon.glyphicon-search.tablet {
 }
 
    li.nav-close {
-    background-color: antiquewhite;
-    color: purple;
+    background-color: white;
+/*    color: purple;
+*/    
+    color: #77C043;
     margin-right: 4%;
     /* text-align: center; */
     cursor: pointer;
@@ -381,95 +443,105 @@ div.about-cog{
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #8a11d0;
-    background-color: #390267;
+    background-color: white;
   }
 }
 /**END NAVBAR**/
 
 
 /**INDEX PAGE**/
-	.minneapolisLandscape {
-		background-image: url('/images/mpls_skyline_saint_anthony_falls.jpg');
-		height: 1000px;
+  .minneapolisLandscape {
+    background-image: url('/images/mpls_skyline_saint_anthony_falls.jpg');
+    height: 1000px;
         background-size: cover;
         margin-top: -10px;
-	}
-	.searchBox {
-		width: 90%;
-		height: 300px;
-		color:white;
-		margin: 10px auto;
+  }
+  .searchBox {
+    width: 90%;
+    height: 210px;
+    color:white;
+    margin: 10px auto;
     position: absolute;
     top: 15%;
     left: 5%;
-	}
+  }
 
-	.block {
-		border-radius: 10px 10px 10px 10px;
-		background: #496B46;
-  		filter: alpha(opacity=60);
-  		/* IE */
+  .block {
+    border-radius: 10px 10px 10px 10px;
+/*    background: #496B46;
+*/      
+    background-color:#00B04C;
+      filter: alpha(opacity=60);
+      /* IE */
         -moz-opacity: 0.6;
-  		/* Mozilla */
-  		opacity: 0.9;
-  		/* CSS3 */
-  		position: absolute;
-  		top: 0;
-  		left: 0;
-  		height: 100%;
-  		width: 100%;
-	}
+      /* Mozilla */
+      opacity: 0.9;
+      /* CSS3 */
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+  }
 
-	.searchBoxText {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 1;
+  .searchBoxText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
 
-	}
+  }
 
-	/**SEARCH BOX**/
-	.searchBoxText .title {
-		font-family:  "Leckerli One";
-		font-size: 40px ;
-		opacity: 1;
-		text-align: center;
-		color:  #B5B8B5;
-	}
+  /**SEARCH BOX**/
+  .searchBoxText .title {
+/*    font-family:  "Leckerli One";
+*/    opacity: 1;
+/*    color:  #B5B8B5;
+*/
+    background-image: url('/logos/SVG/Rental Researcher Logo-Horizontal-White.svg');
 
-	.searchBoxText .subTitle {
-		font-size:15px;
-		text-transform: uppercase;
-		font-family: "Montserrat";
-		opacity: 1;
-		text-align: center;
-		color: #AAEEA4;
-		margin-top:10px;
-	}
+    margin-top: 10px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 45% 0;
+  }
 
-	/**END SEARCH BOX**/
+  .searchBoxText .subTitle {
+    font-size:15px;
+/*    text-transform: uppercase;
+*//*    font-family: "Montserrat";
+*/    opacity: 1;
+    text-align: center;
+/*    color: #AAEEA4;
+*/    
+    color: white;
+    margin-top:10px;
+  }
+
+  /**END SEARCH BOX**/
 
 
 
 /**END INDEX PAGE**/
 footer {
-	    background-color: #6A6B6A;
-	    margin-bottom: 0px;
+      background-color: #6A6B6A;
+      margin-bottom: 0px;
 
 }
 
 footer p {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 footer ul {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .table100 {
-	display: none;
+  display: none;
 }
 
 
@@ -482,20 +554,21 @@ footer ul {
     border: none;
     height: 30px;
     font-size: 16px;
+    line-height:normal;
 }
 
 .typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	font-size: 16px;
-	height: 35px;
-	line-height: 35px;
-	outline: medium none;
-	padding: 8px 12px;
-	color:black;
-	width: 100%;
-	font-family: "Arial";
-	color: #6A6B6A;
-	vertical-align: middle;
+  border: 2px solid #CCCCCC;
+  font-size: 16px;
+  height: 35px;
+  line-height: 35px;
+  outline: medium none;
+  padding: 8px 12px;
+  color:black;
+  width: 100%;
+/*  font-family: "Arial";
+*/  color: #6A6B6A;
+  vertical-align: middle;
 }
 
 /*Typeahead adds styling to the input you put it on, including making that element background-color: transparent.
@@ -503,65 +576,71 @@ footer ul {
     so we get a light green color.  Making this white is probably more correct anyways
 */
 .twitter-typeahead {
-	background-color: white;
+  background-color: white;
 }
 
 .homepage-search-bar-area .twitter-typeahead { /*width of input box*/
-	width: 50%;
+  width: 50%;
 }
 
 .navbar-search .twitter-typeahead { /*width of input box*/
-	width: 90%;
+  width: 100%;
 }
 
 .typeahead {
-	background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 .typeahead:focus {
-	border: 2px solid #0097CF;
+  border: 2px solid #0097CF;
 }
 .tt-query {
-/*	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+/*  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 */}
 .tt-hint {
-	color: #999999;
+  color: #999999;
 }
 .tt-dropdown-menu {
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	margin-top: 12px;
-	padding: 8px 0;
-	width: 350px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 195px;
 }
 
 .navbar-search .tt-dropdown-menu {
-	width: 300px;
+  width: 300px;
     /*These are specific to the nav-bar in small viewport */
     position: fixed !important;
     top: 90px !important;
     left: 10% !important;
+        -webkit-transform: translate3d(0,0,0);
+
+}
+
+.max34 {
+  max-height: 34px;
 }
 
 .tt-suggestion {
-	font-size: 16px;
-	line-height: 24px;
-	padding: 3px 20px;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 3px 20px;
     color: #496B46;
-    margin-right: 10px;
-    text-align: left;
+/*    margin-right: 10px;
+*/    text-align: left;
 }
 .navbar-search .tt-suggestion {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .tt-suggestion.tt-is-under-cursor {
-	background-color: #0097CF;
-	color: #FFFFFF;
+  background-color: #0097CF;
+  color: #FFFFFF;
 }
 .tt-suggestion p {
-	margin: 0;
+  margin: 0;
 }
 
 #search {
@@ -570,38 +649,39 @@ footer ul {
 }
 
 .row.first, .row.second, .row.third {
-	margin-left: 0px;
-	margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 
 .row.second, .row.third {
-	text-align: center;
+  text-align: center;
 }
 
 .row.second {
-	margin-top: 15px;
-	font-size: 15px;
+  margin-top: 15px;
+  font-size: 15px;
 }
 
 /*Stats on the last row of the search box*/
 .row.third {
-	margin-top: 45px;
-	font-family: "Montserrat";
-	font-size:14px;
+  margin-top: 45px;
+/*  font-family: "Montserrat";
+*/  font-size:10px;
+color: #434B54;
 
 }
 
 .row.third .col-xs-4 {
-	border-top: 1px solid white;
-	padding-top:10px;
-	cursor:pointer;
-	height:100%;
+  border-top: 1px solid white;
+  padding-top:10px;
+/*  cursor:pointer;
+*/  height:100%;
 }
 
 .row.third .col-xs-4:hover {
-	color: #AAEEA4;
-	border-top-color: #AAEEA4;
+/*  color: #AAEEA4;
+  border-top-color: #AAEEA4;*/
 }
 
 /****END STYLES FOR TYPEAHEAD SEARCH COMPLETION****/
@@ -700,7 +780,7 @@ i.glyphicon.glyphicon-home, i.glyphicon.glyphicon-calendar, i.glyphicon.glyphico
 */
 /***CONTACT US***/
 input.contact, textarea.contact {
-  width: 250px;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -715,14 +795,16 @@ label.contact {
 
 button#contact {
   margin-top:15px;
-  margin-left: 247px;
-  cursor:pointer;
+/*  margin-left: 247px;
+*/  cursor:pointer;
   opacity: .8;
 }
 
 button#contact:hover {
   opacity: 1;
 }
+
+
 
 /***END CONTACT US***/
 
@@ -740,44 +822,97 @@ img.bio-image{
     margin-bottom: 40px;
 }
 
+/*p.divider {
+    height: 50%;
+     margin-top: 10px; 
+    border-right: 1px solid #434B54;
+}*/
+
 /***END INDEX PAGE LEARN MORE ROW***/
 
+@media(min-width: 320px){
+    .searchBoxText .subTitle {
+      font-size:18px;
+    }
+    .searchBoxText .title {
+      height: 60px;
+    }
 
+}
+
+@media(min-width: 480px){
+    .searchBoxText .subTitle {
+      margin-top: -3px;
+    font-size: 20px;
+    }
+    .searchBoxText .title {
+      margin-top:5px;
+      height:70px;
+    }
+}
+
+@media(min-width: 640px){
+    .searchBoxText .subTitle {
+      margin-top: -3px;
+    font-size: 22px;
+    }
+    .searchBoxText .title {
+      margin-top:5px;
+      height:75px;
+    }
+
+    .row.second {
+      margin-top:10px;
+    }
+    .tt-dropdown-menu {
+      width: 350px;
+    }
+}
 
 
 /***MEDIA QUERIES***/
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	.searchBox {
-		width: 60%;
-		left: 19%;
-	}
+    .navbar-default .navbar-brand img {
+      position:relative;
+}
+  .searchBox {
+    width: 60%;
+    left: 19%;
+        height: 350px;
 
-	.searchBox .title {
-		font-size: 50px;
-	}
+  }
 
-	.searchBox .subTitle {
-		font-size: 20px;
-	}
+  .searchBox .title {
+/*    font-size: 50px;
+*/    height: 90px;
+  }
 
-	.row.second {
-		margin-top: 10px;
-	}
+  .searchBox .subTitle {
+    font-size: 28px;
+    letter-spacing: 1.0px;
+        margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-	.row.third {
+  .row.second {
+    margin-top: 10px;
+  }
 
-		margin-top: 25px;
-		font-size: 19px;
-	}
+  .row.third {
 
-	.row.third .col-xs-4 {
-		padding-top: 10px;
-	}
+    margin-top: 25px;
+    font-size: 19px;
+  }
 
-	.typeahead, .tt-query, .tt-hint, .tt-suggestion {
-		font-size: 22px;
-	}
+  .row.third .col-xs-4 {
+    padding-top: 10px;
+  }
+
+  .typeahead, .tt-query, .tt-hint, .tt-suggestion {
+    font-size: 22px;
+  }
 
     .navbar-search {
         width:300px;
@@ -790,7 +925,7 @@ img.bio-image{
 
     .navbar-search-glyph {
         position: absolute;
-        left: 5%;
+        left: 20px;
         top: 19px;
         font-size:16px;
         cursor:pointer;
@@ -813,31 +948,58 @@ img.bio-image{
     /*width:100%;*/
 }
 
+
+
 img.streetview_property {
     margin: 24px auto;
   }
 }
 
+@media(min-width: 934px){
+  .searchBox {
+    height: 350px;
+  }
+}
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.row.third {
-		margin-top: 25px;
-		font-size:20px;
-	}
+  .navbar-default .navbar-brand img {
+    /*height: 100%;
+    position:relative;*/
+  }
+  .row.third {
+    margin-top: 25px;
+    font-size:20px;
+  }
 
   img.streetview_property {
     height: 300px;
     margin: 15px auto;
   }
 
+  .searchBox {
+    height: 350px;
+  }
 
+  .row.third{
+
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.row.third {
-		margin-top: 40px;
-		font-size: 24px;
-	}
+  .row.third {
+    margin-top: 40px;
+    font-size: 23px;
+  }
+    .row.third p {
+    padding-top: 5%;
+  }
 
+}
+
+@media(min-width: 1520px){
+  .searchBox {
+    height: 335px;
+  }
 }

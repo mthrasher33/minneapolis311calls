@@ -13,7 +13,7 @@ html
     link(rel='stylesheet', href='/stylesheets/addressSearch.css')
     link(rel='stylesheet', href='/stylesheets/landlordSearch.css')
 
-    //link(rel="icon" type="image/x-icon" href="/favicon.ico")
+    link(rel="icon" type="image/x-icon" href="/favicon.svg")
 
 
   body
@@ -28,7 +28,9 @@ html
                 if path !== "/"
                     button.search.navbar-toggle(type='button',data-toggle='collapse',data-target='.navbar-collapse.collapse.search')
                         span.glyphicon.glyphicon-search.tablet
-                a.navbar-brand(href='/') Pork Belly
+                a.navbar-brand(href='/')
+                    img.visible-xs(src=('/logos/SVG/Rental Researcher Favicon-Color.svg'))
+                    img.hidden-xs(src=('/logos/SVG/Rental Researcher Logo-Horizontal-Color with white type.svg'))
 
             .navbar-collapse.collapse.menu
                 ul.nav.navbar-nav
@@ -49,7 +51,7 @@ html
                                     <form action="/check" method="POST" role="form">
                                           <div class="navbar-search">
                                               <input id="search-input" type="text" name="typeahead"  placeholder="Search by Address" aria-describedby="sizing-addon1">
-                                              <button type="submit" class="transparent-button">
+                                              <button type="submit" class="transparent-button max34">
                                                 <span class="glyphicon glyphicon-search navbar-search-glyph" aria-hidden="true"></span>
                                               </button>
                                           </div>
