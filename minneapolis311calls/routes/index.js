@@ -3,6 +3,7 @@ var router = express.Router();
 var mysql = require('mysql');
 var nodemailer = require('nodemailer');
 var datalayer = require('../data/datalayer.js');
+var config = require('../config')['production'];
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -88,14 +89,14 @@ router.post('/contact', function(req,res){
     smtpTrans = nodemailer.createTransport('SMTP', {
         service: 'Gmail',
         auth: {
-            user: "minneapolis311calls@gmail.com",
-            pass: "fri$ndgramming"
+            user: "rentalresearcher@gmail.com",
+            pass: config.contactUsEmailPassword
         }
     });
 
     mailOpts = {
         from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-        to: 'minneapolis311calls@gmail.com',
+        to: 'rentalresearcher@gmail.com',
         subject: '311 Minneapolis Inquiry from ' + req.body.name + " at " + req.body.email,
         text: req.body.message
     };
