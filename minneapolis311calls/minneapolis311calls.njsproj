@@ -59,6 +59,15 @@
     <Content Include="public\javascripts\images\marker-icon-2x.png" />
     <Content Include="public\javascripts\images\marker-icon.png" />
     <Content Include="public\javascripts\images\marker-shadow.png" />
+    <Content Include="public\logos\SVG\Rental Researcher Favicon-BW.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Favicon-Color.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Horizontal-BW.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Horizontal-Color with white type.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Horizontal-Color.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Horizontal-White.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Vertical-BW.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher Logo-Vertical-Color.svg" />
+    <Content Include="public\logos\SVG\Rental Researcher map icon.svg" />
     <Content Include="public\stylesheets\bootstrap-theme.css" />
     <Content Include="public\stylesheets\bootstrap-theme.min.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
@@ -87,6 +96,8 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\fonts\" />
     <Folder Include="public\javascripts\images\" />
+    <Folder Include="public\logos\" />
+    <Folder Include="public\logos\SVG\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="typings\" />
