@@ -239,10 +239,10 @@ padding-top: 60px;*/
 }*/
 /*Purple Colors: http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0*/
 .navbar-default {
-/*  background-color: #390267;
+/*  background-color: white;
 */  
     background-color: #434B54 ;
-    border-color: #390267;
+    border-color: white;
 }
 .navbar-default .navbar-brand img {
 /*  color: #ffffff;
@@ -250,9 +250,9 @@ padding-top: 60px;*/
 /*  background-image:url('/logos/SVG/Rental Researcher Logo-Horizontal-Color.svg');
   background-repeat: no-repeat;*/
   position: relative;
-    height: 245%;
+    height: 215%;
     width: auto;
-    top: -15px;
+    top: -11px;
 }
 }
 .navbar-default .navbar-brand:hover,
@@ -283,7 +283,7 @@ padding-top: 60px;*/
 /*    opacity: .9;
 */  }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffffff;
@@ -291,36 +291,39 @@ padding-top: 60px;*/
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #8a11d0;
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
   color: #8a11d0;
-  background-color: #390267;
+  background-color: white;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #8a11d0;
-  background-color: #390267;
-}
+/*  background-color: white;
+*/
+  opacity: .9;}
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #8a11d0;
-  background-color: #390267;
+/*  color: #8a11d0;
+*//*  background-color: white;
+*/opacity: .9;
 }
 .navbar-default .navbar-toggle {
-  border-color: #390267;
+  border-color: white;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #390267;
-}
+/*  background-color: white;
+*/
+  opacity: .9;}
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
 }
@@ -385,8 +388,10 @@ span.glyphicon.glyphicon-search.tablet {
 }
 
    li.nav-close {
-    background-color: antiquewhite;
-    color: purple;
+    background-color: white;
+/*    color: purple;
+*/    
+    color: #77C043;
     margin-right: 4%;
     /* text-align: center; */
     cursor: pointer;
@@ -431,7 +436,7 @@ div.about-cog{
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #8a11d0;
-    background-color: #390267;
+    background-color: white;
   }
 }
 /**END NAVBAR**/
@@ -446,7 +451,7 @@ div.about-cog{
 	}
 	.searchBox {
 		width: 90%;
-		height: 200px;
+		height: 210px;
 		color:white;
 		margin: 10px auto;
     position: absolute;
@@ -850,7 +855,7 @@ img.bio-image{
 	.searchBox {
 		width: 60%;
 		left: 19%;
-        height: 440px;
+        height: 350px;
 
 	}
 
@@ -860,7 +865,7 @@ img.bio-image{
 	}
 
 	.searchBox .subTitle {
-    font-size: 40px;
+    font-size: 28px;
     letter-spacing: 1.0px;
         margin-bottom: 15px;
     padding-left: 15px;
@@ -928,7 +933,7 @@ img.streetview_property {
 
 @media(min-width: 934px){
   .searchBox {
-    height: 400px;
+    height: 350px;
   }
 }
 
@@ -945,10 +950,12 @@ img.streetview_property {
   }
 
   .searchBox {
-    height: 400px;
+    height: 350px;
   }
 
+  .row.third{
 
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -957,6 +964,9 @@ img.streetview_property {
 		margin-top: 40px;
 		font-size: 23px;
 	}
+    .row.third p {
+    padding-top: 5%;
+  }
 
 }
 
