@@ -1,6 +1,10 @@
 ﻿extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  div.row
+    div.col-xs-12.col-sm-4.col-sm-offset-4.errordiv
+      h1.error Sorry, that page does not exist.
+      a(href="/").returnHome Take me home!
+  //h1= message
+  //h2= error.status
+  //pre #{error.stack}

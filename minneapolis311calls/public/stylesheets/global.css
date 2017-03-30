@@ -120,6 +120,16 @@ body {
     margin-top: 10px;
 }
 
+div.errordiv {
+  text-align:center;
+  margin-top: 10%;
+}
+
+div.errordiv a {
+  font-size: 20px;
+  color: #77C043;
+}
+
 
 /**MAP STYLE**/
 
