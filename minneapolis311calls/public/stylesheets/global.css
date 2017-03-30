@@ -38,6 +38,7 @@ body {
     padding-bottom: 0px;
     padding-top: 60px;
     font-family:'bariolregular';
+    font-size: 15px; /*bariolregular is a touch small at 14px, let's make it 15px*/
 
 }
 
