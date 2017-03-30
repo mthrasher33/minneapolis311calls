@@ -83,9 +83,15 @@ router.get('/:landlordName', function (req, res) {
 
                         //Get the minimum data
                         //see here: http://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
-                        var minDate = Math.max.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
-                        var ownerSinceDate = new Date(minDate);
+                        //var minDate = Math.max.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
+                        
+                        //but we want the minimum date, not the max date
+                        var minDate = Math.min.apply(null, properties[0].map(function (o) { return o.IssueDate; }));
 
+
+                        var ownerSinceDate = new Date(minDate);
+                        console.log('ownersincedate: ');
+                        console.log(ownerSinceDate);
                         res.render('landlordSearch', {
                           bbox:JSON.stringify(latlngbounds),
                           geo: JSON.stringify(geo),
