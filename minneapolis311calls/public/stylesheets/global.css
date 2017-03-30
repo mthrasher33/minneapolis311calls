@@ -130,6 +130,11 @@ div.errordiv a {
   color: #77C043;
 }
 
+div.errordiv a:hover {
+  text-decoration: none;
+  opacity: .8;
+}
+
 
 /**MAP STYLE**/
 
