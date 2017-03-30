@@ -114,12 +114,9 @@ body {
     margin-bottom: 5px;
 }
 
-.body-content {
-  /*weird stuff to overwrite native padding*/
-/*  margin-left: -50px;
-    margin-right: -50px;
-    margin-top: -9px;
-padding-top: 60px;*/
+.body-content .container {
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -249,11 +246,9 @@ padding-top: 60px;*/
 */
 /*  background-image:url('/logos/SVG/Rental Researcher Logo-Horizontal-Color.svg');
   background-repeat: no-repeat;*/
-       height: 90%;
-    margin-top: 3px;
+    height: 50px;
     position: absolute;
     left: 10px;
-    max-height: 45px;
 /*    width: auto;
     top: -11px;*/
 }
@@ -281,6 +276,7 @@ padding-top: 60px;*/
 /*  color: #ffffff;
 */
     color: #77C043;
+    font-size: 16px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -668,7 +664,7 @@ footer ul {
   margin-top: 45px;
 /*  font-family: "Montserrat";
 */  font-size:10px;
-color: #434B54;
+color: #d9e2d9;
 
 }
 
