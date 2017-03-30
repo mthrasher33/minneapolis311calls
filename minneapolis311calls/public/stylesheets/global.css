@@ -324,6 +324,7 @@ padding-top: 60px;*/
 }
 .navbar-default .navbar-toggle {
   border-color: white;
+  max-height: 34px;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -553,6 +554,7 @@ footer ul {
     border: none;
     height: 30px;
     font-size: 16px;
+    line-height:normal;
 }
 
 .typeahead, .tt-query, .tt-hint {
@@ -604,7 +606,7 @@ footer ul {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   margin-top: 12px;
   padding: 8px 0;
-  width: 350px;
+  width: 195px;
 }
 
 .navbar-search .tt-dropdown-menu {
@@ -615,13 +617,17 @@ footer ul {
     left: 10% !important;
 }
 
+.max34 {
+  max-height: 34px;
+}
+
 .tt-suggestion {
   font-size: 16px;
   line-height: 24px;
   padding: 3px 20px;
     color: #496B46;
-    margin-right: 10px;
-    text-align: left;
+/*    margin-right: 10px;
+*/    text-align: left;
 }
 .navbar-search .tt-suggestion {
   font-size: 16px;
@@ -770,7 +776,7 @@ i.glyphicon.glyphicon-home, i.glyphicon.glyphicon-calendar, i.glyphicon.glyphico
 */
 /***CONTACT US***/
 input.contact, textarea.contact {
-  width: 250px;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -785,8 +791,8 @@ label.contact {
 
 button#contact {
   margin-top:15px;
-  margin-left: 247px;
-  cursor:pointer;
+/*  margin-left: 247px;
+*/  cursor:pointer;
   opacity: .8;
 }
 
@@ -853,6 +859,9 @@ img.bio-image{
 
     .row.second {
       margin-top:10px;
+    }
+    .tt-dropdown-menu {
+      width: 350px;
     }
 }
 
