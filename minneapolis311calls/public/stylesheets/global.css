@@ -361,7 +361,7 @@ li.navbar-search-li {
 }
 .navbar-search {
     border: none;
-    line-height: 27px;
+    line-height: 0px;
     padding-left:15px;
     background-color: white;
     width: 95%;
@@ -387,7 +387,7 @@ span.glyphicon.glyphicon-search.tablet {
 
 .navbar-search-glyph {
     position: absolute;
-    left: 5%;
+    left: 20px;
     top: 8px;
     font-size:16px;
     cursor:pointer;
@@ -584,7 +584,7 @@ footer ul {
 }
 
 .navbar-search .twitter-typeahead { /*width of input box*/
-  width: 90%;
+  width: 100%;
 }
 
 .typeahead {
@@ -615,6 +615,8 @@ footer ul {
     position: fixed !important;
     top: 90px !important;
     left: 10% !important;
+        -webkit-transform: translate3d(0,0,0);
+
 }
 
 .max34 {
@@ -921,7 +923,7 @@ img.bio-image{
 
     .navbar-search-glyph {
         position: absolute;
-        left: 5%;
+        left: 20px;
         top: 19px;
         font-size:16px;
         cursor:pointer;
