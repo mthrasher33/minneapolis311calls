@@ -30,20 +30,20 @@ block content
             table.table.table-striped#results
               thead
                 tr
-                  th #
+                  //th #
                   th Address
-                  th Owner
-                  th Applicant
+                  //th Owner
+                  //th Applicant
                   th Type
                   th Date of Incident
               tbody
                 each rrow, i in calls311
                   tr
-                    td #{i+1}
+                    //td #{i+1}
                     td
                         a(href= "/addressSearch/#{calls311[i].Address}") #{calls311[i].Address}
-                    td #{calls311[i].APP_NAME}
-                    td #{calls311[i].ApplicantRepresentative}
+                    //td #{calls311[i].APP_NAME}
+                    //td #{calls311[i].ApplicantRepresentative}
                     td #{calls311[i].TypeName}
                     td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
         else
@@ -87,7 +87,12 @@ block script
     script(src="/javascripts/leaflet.js")
     script(type='text/javascript').
         $(document).ready(function() {
-                $('#results').DataTable();
+                $('#results').DataTable({
+                  //default sort by most recent at the top
+                  "order": [[1, "desc"]],
+                  "bLengthChange": false,
+                  "searching": false
+                });
             });
         function onEachFeature(feature, layer) {
           if (feature.properties && feature.properties.pop_up_text) {
