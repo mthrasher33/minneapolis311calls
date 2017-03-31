@@ -601,6 +601,7 @@ footer ul {
 
 .navbar-search .twitter-typeahead { /*width of input box*/
   width: 100%;
+  height: 30px;
 }
 
 .typeahead {
