@@ -11,17 +11,17 @@ block content
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-briefcase
-        span Owner: #{landlordName}
+        span Name: #{landlordName}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-calendar-o
-        span Owner Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
+        span Active Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-hashtag
-        span Properties Owned: #{propertyCountForOwner} &nbsp;
+        span Properties: #{propertyCountForOwner} &nbsp;
             a(href="#PropertiesOwnedHeader") (View Map)
 
     div.row.margin-bottom-20
@@ -30,31 +30,32 @@ block content
             table.table.table-striped#results
               thead
                 tr
-                  th #
+                  //th #
                   th Address
                   th Owner
-                  th Applicant
+                  //th Applicant
+                  th Landlord
                   th Type
                   th Date of Incident
               tbody
                 each rrow, i in calls311
                   tr
-                    td #{i+1}
+                    //td #{i+1}
                     td
                         a(href= "/addressSearch/#{calls311[i].Address}") #{calls311[i].Address}
                     td #{calls311[i].APP_NAME}
-                    td #{calls311[i].ApplicantRepresentative}
+                    td #{calls311[i].ContactName}
                     td #{calls311[i].TypeName}
                     td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
         else
              div.text-align-center.no-311-calls
-                span.margin-right-10 No 311 Calls for this Landlord
+                span.margin-right-10 No 311 Calls
                 i.fa.fa-hand-peace-o.kv-icon
 
     div.row.margin-bottom-20
         div.col-md-12
             div.panel.panel-default
-                div.panel-heading.text-align-center#PropertiesOwnedHeader Properties Owned
+                div.panel-heading.text-align-center#PropertiesOwnedHeader Properties
                 div#AllPropertiesMap
 
     div.row
@@ -87,7 +88,12 @@ block script
     script(src="/javascripts/leaflet.js")
     script(type='text/javascript').
         $(document).ready(function() {
-                $('#results').DataTable();
+                $('#results').DataTable({
+                  //default sort by most recent at the top
+                  "order": [[4, "desc"]],
+                  "bLengthChange": false,
+                  "searching": false
+                });
             });
         function onEachFeature(feature, layer) {
           if (feature.properties && feature.properties.pop_up_text) {
@@ -128,11 +134,11 @@ block script
 
 
               // loop through our density intervals and generate a label with a colored square for each interval
-              div.innerHTML += '<div style="background:white; padding-left: 10px; padding-right: 10px; font-family:bariolregular;"># of calls'
+              div.innerHTML += '<div style="background:white;padding-left: 10px; padding-right: 10px; font-family:bariolregular"># of calls'
               for (var i = 0; i < legendArray.length; i++) {
                   var val = legendArray[i]
                   div.innerHTML +=
-                    '<div style="text-align:center;background:' + val.color + '";width="50px";/>' + val.label + '</div>'
+                    '<div style="text-align:center;font-family:bariolregular;background:' + val.color + '";width="50px";/>' + val.label + '</div>'
               }
               div.innerHTML += "</div>"
               return div;

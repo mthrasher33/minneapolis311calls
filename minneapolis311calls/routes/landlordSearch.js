@@ -51,7 +51,8 @@ router.get('/:landlordName', function (req, res) {
                           var outrow = {
                             pop_up_text: pop_up_text,
                             X : row['X'],
-                            Y : row['Y']
+                            Y: row['Y'],
+                            num_reports: row['num_reports']
                           }
                           outlist.push(outrow)
                         };
