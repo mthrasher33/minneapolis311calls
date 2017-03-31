@@ -18,6 +18,7 @@ var map = require('./routes/map');
 var app = express();
 
 
+//setup favicon
 
 
 //this is done so we can use moment in Jade templates
@@ -29,7 +30,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.svg'));
+app.use(favicon(__dirname + '/public/favicon.png'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
