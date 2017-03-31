@@ -27,8 +27,8 @@
 }
 
 div.col-md-12.min400 {
- min-width: 402px;
- overflow-x: scroll;
+/* min-width: 402px;
+ overflow-x: scroll;*/
 }
 
 
