@@ -96,7 +96,7 @@ block script
         };
 
         var domain = [1, 3, 5, 10],
-        range = ["#00B04C", "#A3C050", "#FFD25A", "#F6905C", "#EF4355"]
+        range = ["#33a7d4", "#819ba5", "#ad8c7c", "#d07b52", "#f26426"]
         function getColor(inval) {
               for (var i = 0; i < domain.length; i++) {
                   if (inval < domain[i]) {
@@ -128,7 +128,7 @@ block script
 
 
               // loop through our density intervals and generate a label with a colored square for each interval
-              div.innerHTML += '<div style="background:white"># of calls'
+              div.innerHTML += '<div style="background:white; padding-left: 5px; padding-right: 5px;"># of calls'
               for (var i = 0; i < legendArray.length; i++) {
                   var val = legendArray[i]
                   div.innerHTML +=
@@ -158,7 +158,8 @@ block script
           pointToLayer: function (geoj, latlng) {
             return L.circleMarker(latlng, {
               radius: 7,
-              stroke : false,
+              stroke : true,
+              color: "#434B54",
               opacity:	0.8, //	Stroke opacity.
               fill	: true,
               fillColor	:getColor(geoj["properties"]["num_reports"]),
