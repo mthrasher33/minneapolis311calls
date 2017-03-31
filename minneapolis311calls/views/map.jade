@@ -69,11 +69,11 @@ block script
 
 
           // loop through our density intervals and generate a label with a colored square for each interval
-          div.innerHTML += '<div style="background:white"># of calls'
+          div.innerHTML += '<div style="background:white;font-family:bariolregular"># of calls'
           for (var i = 0; i < legendArray.length; i++) {
               var val = legendArray[i]
               div.innerHTML +=
-                '<div style="text-align:center;background:' + val.color + '";width="50px";/>' + val.label + '</div>'
+                '<div style="text-align:center;font-family:bariolregular;background:' + val.color + '";width="50px";/>' + val.label + '</div>'
           }
           div.innerHTML += "</div>"
           return div;
