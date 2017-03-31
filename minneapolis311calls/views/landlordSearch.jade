@@ -11,29 +11,30 @@ block content
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-briefcase
-        span Owner: #{landlordName}
+        span Name: #{landlordName}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-calendar-o
-        span Owner Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
+        span Active Since: #{moment(ownerSinceDate).format('MM/DD/YYYY')}
      div.col-md-4
       div.panel.panel-default
        div.panel-heading
         i.kv-icon.fa.fa-hashtag
-        span Properties Owned: #{propertyCountForOwner} &nbsp;
+        span Properties: #{propertyCountForOwner} &nbsp;
             a(href="#PropertiesOwnedHeader") (View Map)
 
     div.row.margin-bottom-20
-     div.col-md-12
+     div.col-md-12.min400
         if (locals.calls311.length > 0)
             table.table.table-striped#results
               thead
                 tr
                   //th #
                   th Address
-                  //th Owner
+                  th Owner
                   //th Applicant
+                  th Landlord
                   th Type
                   th Date of Incident
               tbody
@@ -42,19 +43,19 @@ block content
                     //td #{i+1}
                     td
                         a(href= "/addressSearch/#{calls311[i].Address}") #{calls311[i].Address}
-                    //td #{calls311[i].APP_NAME}
-                    //td #{calls311[i].ApplicantRepresentative}
+                    td #{calls311[i].APP_NAME}
+                    td #{calls311[i].ContactName}
                     td #{calls311[i].TypeName}
                     td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
         else
              div.text-align-center.no-311-calls
-                span.margin-right-10 No 311 Calls for this Landlord
+                span.margin-right-10 No 311 Calls
                 i.fa.fa-hand-peace-o.kv-icon
 
     div.row.margin-bottom-20
         div.col-md-12
             div.panel.panel-default
-                div.panel-heading.text-align-center#PropertiesOwnedHeader Properties Owned
+                div.panel-heading.text-align-center#PropertiesOwnedHeader Properties
                 div#AllPropertiesMap
 
     div.row
