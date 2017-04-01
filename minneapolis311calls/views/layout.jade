@@ -3,10 +3,16 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(property="og:image" content="/favicon.png")
-    meta(property="og:url" content="http://www.rentalresearcher.com")
-    meta(property="og:description" content="Rental Researcher: An online tool for learning more about rental property in Minneapolis")
-
+            
+    meta(property="og:type" content="article")
+    meta(property="og:title" content="Explore Minneapolis 311 Calls and Landlord Information")
+    meta(property="og:site_name" content="Rental Researcher")
+    meta(property="og:url" content="rentalresearcher.com")
+    meta(property="og:image" content="/images/screenshot-for-og.png")
+    meta(property="article:published_time" content="2017-03-31")
+    meta(property="article:author" content="https://www.facebook.com/matt.thrasher2")
+    meta(property="article:author" content="https://www.facebook.com/mickaelmommsen")
+    meta(property="article:author" content="https://www.facebook.com/adam.oien")
 
     title #{title} - 311 Calls from Minneapolis Rental Properties
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -90,5 +96,5 @@ include footer
 
       ga('create', 'UA-90791447-1', 'auto');
       ga('send', 'pageview');
-    
+
     block script
