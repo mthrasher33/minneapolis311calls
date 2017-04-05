@@ -6,6 +6,7 @@ block extraHeader
 
 block content
    div.container
+    h1.hidden Landlord Search Results
     div.row.margin-bottom-10
      div.col-md-4
       div.panel.panel-default
@@ -25,6 +26,7 @@ block content
             a(href="#PropertiesOwnedHeader") (View Map)
 
     div.row.margin-bottom-20
+     h2.hidden 311 Calls for Landlord
      div.col-md-12
         if (locals.calls311.length > 0)
             table.table.table-striped#results
@@ -60,6 +62,7 @@ block content
 
     div.row
       div.col-xs-12
+        h2.hidden Properties Owned by Landlord
         h4.landlord_properties Properties
     div.row
       each rrow, i in properties[0]

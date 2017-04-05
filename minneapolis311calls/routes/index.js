@@ -113,4 +113,10 @@ router.post('/contact', function(req,res){
 
 });
 
+/*Allow robots to crawl the site*/
+app.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /");
+});
+
 module.exports = router;

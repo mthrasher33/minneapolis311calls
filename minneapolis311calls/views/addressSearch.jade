@@ -8,6 +8,7 @@ block content
              div.panel.panel-default
               div.panel-heading Property Summary
               div.panel-body
+                h1.hidden Address Search Results
                 //If there is one rental license at the property
                 p#address
                  i.kv-icon.fa.fa-home
@@ -43,6 +44,7 @@ block content
 
             
         div.row.margin-bottom-20
+            h2.hidden 311 Calls for this Property
             //Need to have logic for multiple licenses, multiple tiers, multiple owners all at one property
             if (locals.results[0].length > 1)
               p There are more than one licenses for this property
@@ -75,6 +77,7 @@ block content
         div.row
             div.col-md-12
              div.panel.panel-default
+                h2.hidden Rental Properties in the Neighborhood
                 div.panel-heading.text-align-center Rental Properties in the Neighborhood
                 include map
 
