@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	div.container
+		div.col-xs-12
+			div.row
+				h1 BLOG
+				each rrow, i in posts
+					-if (posts[i].status != 'draft')
+						div.row
+							a(href="/blog/#{posts[i].id}")
+								div.col-xs-12
+									-if (posts[i].thumbnail.thumbnail)
+										img(src='#{posts[i].thumbnail.thumbnail}')
+									h2 #{posts[i].title}	
+									h4 #{posts[i].date}
+									p Brian Martucci
+									br
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

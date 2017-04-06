@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	div.container
+		div.col-xs-12
+			div.row
+				h1 #{post.title}
+				div.row
+					div.col-xs-12
+						h4 #{post.date}
+						p Brian Martucci
+						div
+							p !{post.content.replace(/\n/g, '<br/>').replace('alignnone', 'img-responsive')}
+						br
+						br
+						a(href="/blog") Back
+
+
+
+
+
+
