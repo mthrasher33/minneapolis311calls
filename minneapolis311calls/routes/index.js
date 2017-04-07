@@ -85,8 +85,8 @@ router.get('/contact', function (req, res) {
 router.get('/blog', function(req,res){
 
     var client = wordpress.createClient({
-        url: "https://snellslaw.wordpress.com",
-        username: "matthew.j.thrasher@gmail.com",
+        url: "https://retalresearcher.wordpress.com",
+        username: "rentalresearcher@gmail.com",
         password: config.wordpressPassword
     });
 
@@ -108,8 +108,8 @@ router.get('/blog/:postID', function(req,res){
 
     var postID = req.params.postID;
        var client = wordpress.createClient({
-        url: "https://snellslaw.wordpress.com",
-        username: "matthew.j.thrasher@gmail.com",
+        url: "https://retalresearcher.wordpress.com",
+        username: "rentalresearcher@gmail.com",
         password: config.wordpressPassword
     });
 
