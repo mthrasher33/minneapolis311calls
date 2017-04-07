@@ -13,6 +13,12 @@ block content
 								p !{post.content.replace(/\n/g, '<br/>').replace('alignnone', 'img-responsive')}
 							br
 							a(href="/blog") Back
+block script
+	script(type='text/javascript').
+		$(document).ready(function() {
+			$('img.alignnone').addClass('img-responsive')   
+		});
+
 
 
 
