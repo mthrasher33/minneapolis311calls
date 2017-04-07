@@ -34,11 +34,13 @@ span.byline {
   margin-left:15px;
   font-size: 15px;
   color: gray;
+  white-space: nowrap;
 }
 
 h4.byline {
   color: gray;
   margin-bottom: 25px;
+  white-space: nowrap;
 }
 
 a.blogList h2, h1.postTitle {

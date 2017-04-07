@@ -17,8 +17,10 @@ block content
 												//img(src='/favicon.png').blogThumbnail
 										div.col-xs-12.col-sm-12
 											h2 #{posts[i].title}
-												span.byline | Brian Martucci	
-											h4 #{moment(posts[i].date).format('MM/DD/YYYY')}
+												//span.byline.hidden-xs | Brian Martucci
+											//span.byline.visible-xs Brian Martucci	
+											//h4 #{moment(posts[i].date).format('MM/DD/YYYY')}
+											h4.byline Brian Martucci | #{moment(posts[i].date).format('MM/DD/YYYY')}
 											p #{posts[i].excerpt}
 											br
 
