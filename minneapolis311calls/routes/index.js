@@ -82,7 +82,7 @@ router.get('/contact', function (req, res) {
     console.log(req.path);
 });
 
-router.get('/blog', function(req,res){
+/*router.get('/blog', function(req,res){
 
     var client = wordpress.createClient({
         url: "https://retalresearcher.wordpress.com",
@@ -102,7 +102,7 @@ router.get('/blog', function(req,res){
 
     });
 
-});
+});*/
 
 router.get('/blog/:postID', function(req,res){
 
