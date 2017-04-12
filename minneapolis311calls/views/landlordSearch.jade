@@ -48,7 +48,7 @@ block content
                     td #{calls311[i].APP_NAME}
                     td #{calls311[i].ContactName}
                     td #{calls311[i].TypeName}
-                    td #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
+                    td(data-sort = moment(calls311[i].OpenedDateTime).unix()) #{moment(calls311[i].OpenedDateTime).format('MM-DD-YYYY')}
         else
              div.text-align-center.no-311-calls
                 span.margin-right-10 No 311 Calls

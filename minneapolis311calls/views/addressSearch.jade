@@ -66,8 +66,9 @@ block content
                           tr
                             //td #{i+1}
                             td #{results[1][i].TypeName}
-                            td #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}
-                            //td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this format
+                            td(data-sort = moment(results[1][i].OpenedDateTime).unix()) #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}
+                            //- td #{moment(results[1][i].OpenedDateTime).format('dddd, MMMM Do YYYY')} //data tables can't sort this 
+                            //- Also, Firefox won't sort his format: #{moment(results[1][i].OpenedDateTime).format('MM-DD-YYYY')}  ...see here: http://dygraphs.com/date-formats.html
             else
                 div.col-sm-12
                  div.text-align-center.no-311-calls 
