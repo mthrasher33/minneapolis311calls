@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var nodemailer = require('nodemailer');
 var GoogleMapsAPI = require('googlemaps');
+var zillow = require('node-zillow');
 
 
 var routes = require('./routes/index');
