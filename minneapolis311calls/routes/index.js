@@ -1,6 +1,5 @@
 ﻿var express = require('express');
 var router = express.Router();
-var nodemailer = require('nodemailer');
 var datalayer = require('../data/datalayer.js');
 var config = require('../config')['production'];
 var wordpress = require( 'wordpress' );
@@ -75,12 +74,6 @@ router.get('/about', function (req, res) {
     console.log(req.path);
 });
 
-/* GET contact page. */
-router.get('/contact', function (req, res) {
-    res.render('contact', { title: 'Contact', path: req.path });
-    console.log(req.path);
-});
-
 /*router.get('/blog', function(req,res){
 
     var client = wordpress.createClient({
@@ -124,38 +117,6 @@ router.get('/blog/:postID', function(req,res){
 
     }); 
 })
-
-/*POST contact page (for sending emails)*/
-/*Source for this: https://blog.ragingflame.co.za/2012/6/28/simple-form-handling-with-express-and-nodemailer*/
-router.post('/contact', function(req,res){
-    var mailOpts, smtpTrans;
-
-    smtpTrans = nodemailer.createTransport('SMTP', {
-        service: 'Gmail',
-        auth: {
-            user: "rentalresearcher@gmail.com",
-            pass: config.contactUsEmailPassword
-        }
-    });
-
-    mailOpts = {
-        from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-        to: 'rentalresearcher@gmail.com',
-        subject: '311 Minneapolis Inquiry from ' + req.body.name + " at " + req.body.email,
-        text: req.body.message
-    };
-
-    smtpTrans.sendMail(mailOpts, function(error, response){
-        if(!error){
-            console.log('email sent to: ' + mailOpts.to);
-            console.log('with this content: ' + mailOpts.text);
-            res.render('contact', {msg: 'Success'});
-        } else {
-            console.log(error);
-        }
-    });
-
-});
 
 /*Allow robots to crawl the site*/
 router.get('/robots.txt', function (req, res) {

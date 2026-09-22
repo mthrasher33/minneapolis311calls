@@ -45,7 +45,6 @@
     <Compile Include="routes\addressSearch.js" />
     <Compile Include="routes\landlordSearch.js" />
     <Compile Include="routes\map.js" />
-    <Compile Include="routes\tryagain.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include=".ebextensions\staticfiles.config" />
@@ -84,7 +83,6 @@
     <Content Include="views\addressSearch.jade" />
     <Content Include="views\addressSearch404.jade" />
     <Content Include="views\addressSearchDidYouMean.jade" />
-    <Content Include="views\contact.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\landlordSearch.jade" />
     <Content Include="views\layout.jade" />
@@ -120,7 +118,6 @@
     <Folder Include="typings\globals\moment\" />
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\mysql\" />
-    <Folder Include="typings\globals\nodemailer\" />
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\serve-favicon\" />
     <Folder Include="typings\globals\serve-static\" />
@@ -142,7 +139,6 @@
     <TypeScriptCompile Include="typings\globals\moment\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mysql\index.d.ts" />
-    <TypeScriptCompile Include="typings\globals\nodemailer\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
