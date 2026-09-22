@@ -1,6 +1,5 @@
 ﻿var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
 var nodemailer = require('nodemailer');
 var datalayer = require('../data/datalayer.js');
 var config = require('../config')['production'];

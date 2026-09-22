@@ -1,5 +1,29 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 var debug = require('debug')('minneapolis311calls');
+var http = require('http');
+
+// Express 4.9.8 (2014) reads the private `res._headers` / `res._headerNames` properties that
+// Node removed in v12. On a modern Node that makes req.fresh throw inside res.send(), so every
+// rendered page returns an empty 500. Restore those two properties from the public getters so
+// the old Express can run on the currently installed Node.
+if (!Object.getOwnPropertyDescriptor(http.ServerResponse.prototype, '_headers')) {
+    Object.defineProperty(http.ServerResponse.prototype, '_headers', {
+        configurable: true,
+        get: function () { return this.getHeaders(); }
+    });
+}
+
+if (!Object.getOwnPropertyDescriptor(http.ServerResponse.prototype, '_headerNames')) {
+    Object.defineProperty(http.ServerResponse.prototype, '_headerNames', {
+        configurable: true,
+        get: function () {
+            var names = {};
+            this.getHeaderNames().forEach(function (name) { names[name] = name; });
+            return names;
+        }
+    });
+}
+
 var app = require('../app');
 
 app.set('port', process.env.PORT || 3000);

@@ -2,10 +2,11 @@
 var router = express.Router();
 var datalayer = require('../data/datalayer.js');
 var GoogleMapsAPI = require('googlemaps');
+var config = require('../config')['production'];
 
 //google maps api
 var publicConfig = {
-    key: 'AIzaSyDayPCImvnZVbuobzkNwSFhDpolpHYm6Wo',
+    key: config.googleMapsApiKey,
     stagger_time: 1000,
     encode_polylines: false,
     secure: true

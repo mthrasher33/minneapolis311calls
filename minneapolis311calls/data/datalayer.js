@@ -1,5 +1,5 @@
 ﻿var DataLayer = function () {
-    var mysql = require("mysql");
+    var mysql = require("mysql2");
 
     var config = require('../config')['production'];
     var pool = mysql.createPool(config.database);
@@ -7,6 +7,7 @@
 
     this.getTopRentalLicenses = function(callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query('SELECT * from RentalLicense LIMIT 100', function (err, rows, fields) {
             // And done with the connection.
@@ -20,6 +21,7 @@
 
     this.rental311callsByLandlord = function (landlordName, callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query("Call rental311callsByLandlord(?)", landlordName, function (err, rows, fields) {
                 // And done with the connection.
@@ -31,6 +33,7 @@
 
     this.rental311callsByAddress = function (address, callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query("Call rental311callsByAddress(?)", address, function (err, rows, fields) {
 
@@ -43,6 +46,7 @@
 
     this.PropertiesOwnedByLandlord = function (ownerName, callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query("Call PropertiesOwnedByLandlord(?)", ownerName, function (err, rows, fields) {
 
@@ -55,6 +59,7 @@
 
     this.matchPartialAddress = function (partialAddress, callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query("SELECT Address from RentalLicense where Address LIKE CONCAT('%', ?, '%') LIMIT 10; ", partialAddress, function (err, rows, fields) {
                 // And done with the connection.
@@ -66,6 +71,7 @@
 
     this.matchAddressDistinct = function (address, callback) {
         pool.getConnection(function (err, connection) {
+            if (err) return callback(err);
             // Use the connection
             connection.query("SELECT DISTINCT Address from RentalLicense where Address LIKE CONCAT('%', ?, '%') LIMIT 10; ", address, function (err, rows, fields) {
                 // And done with the connection.
@@ -78,6 +84,7 @@
     // bbox is an array that is east, south, west, north coordinates
     this.getPointsInArea = function(bbox, callback) {
         pool.getConnection(function (err, connection) {
+              if (err) return callback(err);
               var q = '\
               SELECT distinct round(x(geom), 6) as x, round(y(geom), 6) as y, \
               permitnumber, ContactName, App_Name, Address, num_reports from RentalLicense \
