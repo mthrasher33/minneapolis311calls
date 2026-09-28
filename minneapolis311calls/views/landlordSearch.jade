@@ -153,12 +153,12 @@ block script
         mymap.setMaxZoom(17)
         // if we have more than one point then we set the zoom to the bbox but out 10%
         if (#{propertyCountForOwner > 1} ) {
-          mymap.fitBounds(L.latLngBounds(#{bbox}).pad(0.1));
+          mymap.fitBounds(L.latLngBounds(!{bbox}).pad(0.1));
 
         }
         // if we have only one point we grab the first point from the bbox and set zoom to 17
         else{
-          var bbox = #{bbox}
+          var bbox = !{bbox}
           mymap.setView(bbox[0], 17)}
         L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
         var geo = !{geo}

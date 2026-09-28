@@ -28,18 +28,22 @@ router.get('/:landlordName', function (req, res) {
                         var bbox = {minx:Infinity, miny:Infinity, maxx:-Infinity, maxy:-Infinity}
                         for (i in properties[0]) {
                           row = properties[0][i]
+                          // X/Y come back from MySQL as strings for DECIMAL columns; compare/store
+                          // as numbers so min/max and GeoJSON coordinates aren't lexicographic.
+                          var x = Number(row['X'])
+                          var y = Number(row['Y'])
 
-                          if (row['X'] < bbox.minx) {
-                            bbox.minx = row['X']
+                          if (x < bbox.minx) {
+                            bbox.minx = x
                           }
-                          if (row['Y'] < bbox.miny) {
-                            bbox.miny = row['Y']
+                          if (y < bbox.miny) {
+                            bbox.miny = y
                           }
-                          if (row['X'] > bbox.maxx) {
-                            bbox.maxx = row['X']
+                          if (x > bbox.maxx) {
+                            bbox.maxx = x
                           }
-                          if (row['Y'] > bbox.maxy) {
-                            bbox.maxy = row['Y']
+                          if (y > bbox.maxy) {
+                            bbox.maxy = y
                           }
                           owner = row['App_Name']
                           owner_encoded = encodeURIComponent(owner)
@@ -51,8 +55,8 @@ router.get('/:landlordName', function (req, res) {
                           var pop_up_text = '<p><a href=../addressSearch/{address_encoded}>{address}</a></p>'.format({ address: address, address_encoded: address_encoded })
                           var outrow = {
                             pop_up_text: pop_up_text,
-                            X : row['X'],
-                            Y: row['Y'],
+                            X : x,
+                            Y: y,
                             num_reports: row['num_reports']
                           }
                           outlist.push(outrow)
