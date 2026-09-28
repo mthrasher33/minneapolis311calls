@@ -31,3 +31,13 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function() {
     debug('Express server listening on port ' + server.address().port);
 });
+
+// This Express/Node combination has more than one known edge case (see the
+// _headers/_headerNames shim above) that can throw from deep inside response
+// handling on a single bad request. Without this, an uncaught exception
+// anywhere takes the entire process down until it's restarted. Log and keep
+// serving instead of crashing the whole site over one request.
+process.on('uncaughtException', function (err) {
+    console.error('Uncaught exception (server kept alive):');
+    console.error(err.stack || err.message);
+});
