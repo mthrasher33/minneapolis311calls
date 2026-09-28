@@ -45,8 +45,10 @@ router.get('/geojson', function (req, res){
           geo = geojson.parse(outlist, {Point: ['y', 'x']})
           res.send(geo)
       }
-      else
+      else {
           console.log('Error while performing Query: ' + err);
+          res.status(500).end();
+      }
   });
 });
 
