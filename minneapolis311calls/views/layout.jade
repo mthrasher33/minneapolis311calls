@@ -88,6 +88,11 @@ include footer
                     remote: '/search?key=%QUERY',
                     limit: 10
                 });
+                // clicking (or keyboard-selecting) a suggestion goes straight to that
+                // address instead of requiring a separate click on the search button
+                $('#search-input').on('typeahead:selected typeahead:autocompleted', function (e, datum) {
+                    window.location.href = '/addressSearch/' + encodeURIComponent(datum.value);
+                });
             });
 
     script.
